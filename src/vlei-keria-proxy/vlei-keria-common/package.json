@@ -1,0 +1,34 @@
+{
+  "name": "vlei-keria-common",
+  "version": "1.0.0",
+  "description": "TypeScript base library for VLEI Keria Common types",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run clean && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "typescript",
+    "library",
+    "vlei",
+    "keria"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "signify-ts": "^0.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.0",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.0.0"
+  },
+  "files": [
+    "dist/**/*"
+  ]
+}

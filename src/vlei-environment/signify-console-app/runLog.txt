@@ -1,0 +1,490 @@
+
+> signify-console-app@1.0.0 start
+> node dist/main.js true
+
+Hello World!
+Welcome to the Signify Console Application
+🌍 This is a simple TypeScript hello world example
+
+=== Starting Main Function ===
+Signify-ts library initialized.
+
+[1m[4m[44m[90m  Creating SignifyClients for all entities  [0m
+
+Using Passcode (bran): Dm8Tmz05CF6_JLX9sVlFe
+Client boot process initiated with KERIA agent.
+  Client AID Prefix:  EAahBlwoMzpTutCwwyc8QitdbzrbLXhKLuydIbVOGjCM
+  Agent AID Prefix:   EA8qp-b2OluCrxOycZ2WTb86CI5PcGeV8T9HdVXFK1Dt
+Using Passcode (bran): xpm8L3FH4zdWTe5FEr8ZI
+Client boot process initiated with KERIA agent.
+  Client AID Prefix:  EAgqFn7F92FaRHklAkTno-ewS4Q_eAdwYlj9cppRinTi
+  Agent AID Prefix:   EAOBXPOF1MHPXfcow3uIg-88S8Ano7q4j_k6Rm1csWnR
+Using Passcode (bran): B9qx72My5X7lp-px5Gbtv
+Client boot process initiated with KERIA agent.
+  Client AID Prefix:  EP_43IUs-Rm_23uT6rTLKbrZfmXjxK2487pwnLxFvrdC
+  Agent AID Prefix:   EEBDYb0QdQXhaV1n-aHDZoz0p0OawG8R0hWnuvjnfD79
+Using Passcode (bran): D6_wUYlRAsy01WrU_X_S7
+Client boot process initiated with KERIA agent.
+  Client AID Prefix:  ECDfDeTp6FGJJmPyWYjaNJsJAB4dRF0g9whBlQvcSmDj
+  Agent AID Prefix:   ED3OlOer-olkJeBebKgaKBtxKUZxKCi7zA0xjeYTCU-9
+Using Passcode (bran): AQLT6WK9dCzrtSu6iT88x
+Client boot process initiated with KERIA agent.
+  Client AID Prefix:  EOJ38vvPE6E_HYWaQQT0osUy6FtW6HqKCaxLvTfnZMPY
+  Agent AID Prefix:   EKbEDB5jquJ2rqb6ONcaiYkt4gbJdzvNYqR7zYrG8wSW
+Using Passcode (bran): A_X4BiJExGudQLwZShO1A
+Client boot process initiated with KERIA agent.
+  Client AID Prefix:  EBU-rlt2luyaFt57r4uf3hVy2RQQsiQgqKaatpHQfMt9
+  Agent AID Prefix:   EHHBY_Klrt6dGyl8qBzvhk0pUbdUYW5CWRA44jTRU8V8
+
+[1m[94m✅ All SignifyClients created successfully[0m
+
+
+[1m[4m[44m[90m  Start creating Entities  [0m
+
+
+[1m[4m[44m[90m  Initializing GLEIF  [0m
+
+
+[1m[94mReusing existing gleif AID[0m
+
+Generating OOBI for AID alias gleif with role agent
+Generated OOBI URL: http://keria:3902/oobi/EAFGF7mZ9GF8ZCPldKNRCDQbQC8-6mIklCOlHA_iYlck/agent/EA8qp-b2OluCrxOycZ2WTb86CI5PcGeV8T9HdVXFK1Dt
+
+[1m[94mgleif Prefix: EAFGF7mZ9GF8ZCPldKNRCDQbQC8-6mIklCOlHA_iYlck[0m
+
+
+[1m[94mgleif OOBI: http://keria:3902/oobi/EAFGF7mZ9GF8ZCPldKNRCDQbQC8-6mIklCOlHA_iYlck/agent/EA8qp-b2OluCrxOycZ2WTb86CI5PcGeV8T9HdVXFK1Dt[0m
+
+
+[1m[4m[44m[90m  Initializing Qualified vLEI Issuer  [0m
+
+
+[1m[94mReusing existing qvi AID[0m
+
+Generating OOBI for AID alias qvi with role agent
+Generated OOBI URL: http://keria:3902/oobi/ENfb84uodpWfIV-Fc9B05r0AK40RbcIwO5Pq6WQQnXUL/agent/EAOBXPOF1MHPXfcow3uIg-88S8Ano7q4j_k6Rm1csWnR
+
+[1m[94mqvi Prefix: ENfb84uodpWfIV-Fc9B05r0AK40RbcIwO5Pq6WQQnXUL[0m
+
+
+[1m[94mqvi OOBI: http://keria:3902/oobi/ENfb84uodpWfIV-Fc9B05r0AK40RbcIwO5Pq6WQQnXUL/agent/EAOBXPOF1MHPXfcow3uIg-88S8Ano7q4j_k6Rm1csWnR[0m
+
+
+[1m[4m[44m[90m  Initializing ACME INC  [0m
+
+
+[1m[94mReusing existing acme_inc AID[0m
+
+Generating OOBI for AID alias acme_inc with role agent
+Generated OOBI URL: http://keria:3902/oobi/EDPlPLJBM2Zm1Q_uTG0mrEys6vnYTi7tPUcn3AXn90LV/agent/EEBDYb0QdQXhaV1n-aHDZoz0p0OawG8R0hWnuvjnfD79
+
+[1m[94macme_inc Prefix: EDPlPLJBM2Zm1Q_uTG0mrEys6vnYTi7tPUcn3AXn90LV[0m
+
+
+[1m[94macme_inc OOBI: http://keria:3902/oobi/EDPlPLJBM2Zm1Q_uTG0mrEys6vnYTi7tPUcn3AXn90LV/agent/EEBDYb0QdQXhaV1n-aHDZoz0p0OawG8R0hWnuvjnfD79[0m
+
+
+[1m[4m[44m[90m  Initializing CRIF  [0m
+
+
+[1m[94mReusing existing crif AID[0m
+
+Generating OOBI for AID alias crif with role agent
+Generated OOBI URL: http://keria:3902/oobi/EKFoQhhHBdTkUTSVEVP4fKLfDCERNhlHAJ2I011ouRjI/agent/ED3OlOer-olkJeBebKgaKBtxKUZxKCi7zA0xjeYTCU-9
+
+[1m[94mcrif Prefix: EKFoQhhHBdTkUTSVEVP4fKLfDCERNhlHAJ2I011ouRjI[0m
+
+
+[1m[94mcrif OOBI: http://keria:3902/oobi/EKFoQhhHBdTkUTSVEVP4fKLfDCERNhlHAJ2I011ouRjI/agent/ED3OlOer-olkJeBebKgaKBtxKUZxKCi7zA0xjeYTCU-9[0m
+
+
+[1m[4m[44m[90m  Initializing AMAZOFF  [0m
+
+
+[1m[94mReusing existing AMAZOFF AID[0m
+
+Generating OOBI for AID alias AMAZOFF with role agent
+Generated OOBI URL: http://keria:3902/oobi/ENFochToAqcELF6hawMnVPc3fgkm8XS8AAk5VvFba1XW/agent/EKbEDB5jquJ2rqb6ONcaiYkt4gbJdzvNYqR7zYrG8wSW
+
+[1m[94mAMAZOFF Prefix: ENFochToAqcELF6hawMnVPc3fgkm8XS8AAk5VvFba1XW[0m
+
+
+[1m[94mAMAZOFF OOBI: http://keria:3902/oobi/ENFochToAqcELF6hawMnVPc3fgkm8XS8AAk5VvFba1XW/agent/EKbEDB5jquJ2rqb6ONcaiYkt4gbJdzvNYqR7zYrG8wSW[0m
+
+
+[1m[4m[44m[90m  Initializing SUPPLIERPORTAL  [0m
+
+
+[1m[94mCreating new supplierportal AID[0m
+
+Initiating AID inception for alias: supplierportal
+Successfully created AID with prefix: EBEM4PGOU0Lwp55K9M7Pdzr5WaW4VzGx4w2fhdfjcvMZ
+Assigning 'agent' role to KERIA Agent EHHBY_Klrt6dGyl8qBzvhk0pUbdUYW5CWRA44jTRU8V8 for AID alias supplierportal
+Successfully assigned 'agent' role for AID alias supplierportal.
+Generating OOBI for AID alias supplierportal with role agent
+Generated OOBI URL: http://keria:3902/oobi/EBEM4PGOU0Lwp55K9M7Pdzr5WaW4VzGx4w2fhdfjcvMZ/agent/EHHBY_Klrt6dGyl8qBzvhk0pUbdUYW5CWRA44jTRU8V8
+
+[1m[94msupplierportal Prefix: EBEM4PGOU0Lwp55K9M7Pdzr5WaW4VzGx4w2fhdfjcvMZ[0m
+
+
+[1m[94msupplierportal OOBI: http://keria:3902/oobi/EBEM4PGOU0Lwp55K9M7Pdzr5WaW4VzGx4w2fhdfjcvMZ/agent/EHHBY_Klrt6dGyl8qBzvhk0pUbdUYW5CWRA44jTRU8V8[0m
+
+
+[1m[94mCreating supplierportal Registry[0m
+
+Creating credential registry "supplierportalRegistry" for AID alias "supplierportal"...
+Successfully created credential registry: EPzmcFz8qwNj1IdmjNBE3p96GcQtYDS_15kOWeLqoQTK
+
+[1m[4m[44m[90m  Resolving OOBIs between all entities  [0m
+
+Resolving OOBI URL: http://keria:3902/oobi/ENfb84uodpWfIV-Fc9B05r0AK40RbcIwO5Pq6WQQnXUL/agent/EAOBXPOF1MHPXfcow3uIg-88S8Ano7q4j_k6Rm1csWnR with alias qvi
+Resolving OOBI URL: http://keria:3902/oobi/EDPlPLJBM2Zm1Q_uTG0mrEys6vnYTi7tPUcn3AXn90LV/agent/EEBDYb0QdQXhaV1n-aHDZoz0p0OawG8R0hWnuvjnfD79 with alias acme_inc
+Resolving OOBI URL: http://keria:3902/oobi/EKFoQhhHBdTkUTSVEVP4fKLfDCERNhlHAJ2I011ouRjI/agent/ED3OlOer-olkJeBebKgaKBtxKUZxKCi7zA0xjeYTCU-9 with alias crif
+Resolving OOBI URL: http://keria:3902/oobi/ENFochToAqcELF6hawMnVPc3fgkm8XS8AAk5VvFba1XW/agent/EKbEDB5jquJ2rqb6ONcaiYkt4gbJdzvNYqR7zYrG8wSW with alias AMAZOFF
+Resolving OOBI URL: http://keria:3902/oobi/EBEM4PGOU0Lwp55K9M7Pdzr5WaW4VzGx4w2fhdfjcvMZ/agent/EHHBY_Klrt6dGyl8qBzvhk0pUbdUYW5CWRA44jTRU8V8 with alias supplierportal
+Resolving OOBI URL: http://keria:3902/oobi/EAFGF7mZ9GF8ZCPldKNRCDQbQC8-6mIklCOlHA_iYlck/agent/EA8qp-b2OluCrxOycZ2WTb86CI5PcGeV8T9HdVXFK1Dt with alias gleif
+Resolving OOBI URL: http://keria:3902/oobi/EDPlPLJBM2Zm1Q_uTG0mrEys6vnYTi7tPUcn3AXn90LV/agent/EEBDYb0QdQXhaV1n-aHDZoz0p0OawG8R0hWnuvjnfD79 with alias acme_inc
+Resolving OOBI URL: http://keria:3902/oobi/EKFoQhhHBdTkUTSVEVP4fKLfDCERNhlHAJ2I011ouRjI/agent/ED3OlOer-olkJeBebKgaKBtxKUZxKCi7zA0xjeYTCU-9 with alias crif
+Resolving OOBI URL: http://keria:3902/oobi/ENFochToAqcELF6hawMnVPc3fgkm8XS8AAk5VvFba1XW/agent/EKbEDB5jquJ2rqb6ONcaiYkt4gbJdzvNYqR7zYrG8wSW with alias AMAZOFF
+Resolving OOBI URL: http://keria:3902/oobi/EBEM4PGOU0Lwp55K9M7Pdzr5WaW4VzGx4w2fhdfjcvMZ/agent/EHHBY_Klrt6dGyl8qBzvhk0pUbdUYW5CWRA44jTRU8V8 with alias supplierportal
+Resolving OOBI URL: http://keria:3902/oobi/EAFGF7mZ9GF8ZCPldKNRCDQbQC8-6mIklCOlHA_iYlck/agent/EA8qp-b2OluCrxOycZ2WTb86CI5PcGeV8T9HdVXFK1Dt with alias gleif
+Resolving OOBI URL: http://keria:3902/oobi/ENfb84uodpWfIV-Fc9B05r0AK40RbcIwO5Pq6WQQnXUL/agent/EAOBXPOF1MHPXfcow3uIg-88S8Ano7q4j_k6Rm1csWnR with alias qvi
+Resolving OOBI URL: http://keria:3902/oobi/EKFoQhhHBdTkUTSVEVP4fKLfDCERNhlHAJ2I011ouRjI/agent/ED3OlOer-olkJeBebKgaKBtxKUZxKCi7zA0xjeYTCU-9 with alias crif
+Resolving OOBI URL: http://keria:3902/oobi/ENFochToAqcELF6hawMnVPc3fgkm8XS8AAk5VvFba1XW/agent/EKbEDB5jquJ2rqb6ONcaiYkt4gbJdzvNYqR7zYrG8wSW with alias AMAZOFF
+Resolving OOBI URL: http://keria:3902/oobi/EBEM4PGOU0Lwp55K9M7Pdzr5WaW4VzGx4w2fhdfjcvMZ/agent/EHHBY_Klrt6dGyl8qBzvhk0pUbdUYW5CWRA44jTRU8V8 with alias supplierportal
+Resolving OOBI URL: http://keria:3902/oobi/EAFGF7mZ9GF8ZCPldKNRCDQbQC8-6mIklCOlHA_iYlck/agent/EA8qp-b2OluCrxOycZ2WTb86CI5PcGeV8T9HdVXFK1Dt with alias gleif
+Resolving OOBI URL: http://keria:3902/oobi/ENfb84uodpWfIV-Fc9B05r0AK40RbcIwO5Pq6WQQnXUL/agent/EAOBXPOF1MHPXfcow3uIg-88S8Ano7q4j_k6Rm1csWnR with alias qvi
+Resolving OOBI URL: http://keria:3902/oobi/EDPlPLJBM2Zm1Q_uTG0mrEys6vnYTi7tPUcn3AXn90LV/agent/EEBDYb0QdQXhaV1n-aHDZoz0p0OawG8R0hWnuvjnfD79 with alias acme_inc
+Resolving OOBI URL: http://keria:3902/oobi/ENFochToAqcELF6hawMnVPc3fgkm8XS8AAk5VvFba1XW/agent/EKbEDB5jquJ2rqb6ONcaiYkt4gbJdzvNYqR7zYrG8wSW with alias AMAZOFF
+Resolving OOBI URL: http://keria:3902/oobi/EBEM4PGOU0Lwp55K9M7Pdzr5WaW4VzGx4w2fhdfjcvMZ/agent/EHHBY_Klrt6dGyl8qBzvhk0pUbdUYW5CWRA44jTRU8V8 with alias supplierportal
+Resolving OOBI URL: http://keria:3902/oobi/EAFGF7mZ9GF8ZCPldKNRCDQbQC8-6mIklCOlHA_iYlck/agent/EA8qp-b2OluCrxOycZ2WTb86CI5PcGeV8T9HdVXFK1Dt with alias gleif
+Resolving OOBI URL: http://keria:3902/oobi/ENfb84uodpWfIV-Fc9B05r0AK40RbcIwO5Pq6WQQnXUL/agent/EAOBXPOF1MHPXfcow3uIg-88S8Ano7q4j_k6Rm1csWnR with alias qvi
+Resolving OOBI URL: http://keria:3902/oobi/EDPlPLJBM2Zm1Q_uTG0mrEys6vnYTi7tPUcn3AXn90LV/agent/EEBDYb0QdQXhaV1n-aHDZoz0p0OawG8R0hWnuvjnfD79 with alias acme_inc
+Resolving OOBI URL: http://keria:3902/oobi/EKFoQhhHBdTkUTSVEVP4fKLfDCERNhlHAJ2I011ouRjI/agent/ED3OlOer-olkJeBebKgaKBtxKUZxKCi7zA0xjeYTCU-9 with alias crif
+Resolving OOBI URL: http://keria:3902/oobi/EBEM4PGOU0Lwp55K9M7Pdzr5WaW4VzGx4w2fhdfjcvMZ/agent/EHHBY_Klrt6dGyl8qBzvhk0pUbdUYW5CWRA44jTRU8V8 with alias supplierportal
+Resolving OOBI URL: http://keria:3902/oobi/EAFGF7mZ9GF8ZCPldKNRCDQbQC8-6mIklCOlHA_iYlck/agent/EA8qp-b2OluCrxOycZ2WTb86CI5PcGeV8T9HdVXFK1Dt with alias gleif
+Resolving OOBI URL: http://keria:3902/oobi/ENfb84uodpWfIV-Fc9B05r0AK40RbcIwO5Pq6WQQnXUL/agent/EAOBXPOF1MHPXfcow3uIg-88S8Ano7q4j_k6Rm1csWnR with alias qvi
+Resolving OOBI URL: http://keria:3902/oobi/EDPlPLJBM2Zm1Q_uTG0mrEys6vnYTi7tPUcn3AXn90LV/agent/EEBDYb0QdQXhaV1n-aHDZoz0p0OawG8R0hWnuvjnfD79 with alias acme_inc
+Resolving OOBI URL: http://keria:3902/oobi/EKFoQhhHBdTkUTSVEVP4fKLfDCERNhlHAJ2I011ouRjI/agent/ED3OlOer-olkJeBebKgaKBtxKUZxKCi7zA0xjeYTCU-9 with alias crif
+Resolving OOBI URL: http://keria:3902/oobi/ENFochToAqcELF6hawMnVPc3fgkm8XS8AAk5VvFba1XW/agent/EKbEDB5jquJ2rqb6ONcaiYkt4gbJdzvNYqR7zYrG8wSW with alias AMAZOFF
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Contact "qvi" added/updated.
+Contact "gleif" added/updated.
+Contact "gleif" added/updated.
+Contact "qvi" added/updated.
+Contact "gleif" added/updated.
+Contact "AMAZOFF" added/updated.
+Contact "crif" added/updated.
+Contact "crif" added/updated.
+Contact "qvi" added/updated.
+Contact "gleif" added/updated.
+Contact "AMAZOFF" added/updated.
+Contact "crif" added/updated.
+Contact "acme_inc" added/updated.
+Contact "AMAZOFF" added/updated.
+Contact "crif" added/updated.
+Contact "acme_inc" added/updated.
+Contact "AMAZOFF" added/updated.
+Contact "acme_inc" added/updated.
+✅ gleif resolved OOBI for qvi
+Contact "qvi" added/updated.
+Contact "acme_inc" added/updated.
+✅ AMAZOFF resolved OOBI for gleif
+✅ crif resolved OOBI for qvi
+✅ acme_inc resolved OOBI for gleif
+✅ crif resolved OOBI for gleif
+✅ qvi resolved OOBI for crif
+✅ acme_inc resolved OOBI for crif
+✅ crif resolved OOBI for AMAZOFF
+✅ gleif resolved OOBI for crif
+✅ AMAZOFF resolved OOBI for acme_inc
+✅ acme_inc resolved OOBI for qvi
+✅ qvi resolved OOBI for acme_inc
+✅ qvi resolved OOBI for gleif
+✅ acme_inc resolved OOBI for AMAZOFF
+✅ qvi resolved OOBI for AMAZOFF
+✅ crif resolved OOBI for acme_inc
+✅ AMAZOFF resolved OOBI for qvi
+✅ AMAZOFF resolved OOBI for crif
+✅ gleif resolved OOBI for AMAZOFF
+✅ gleif resolved OOBI for acme_inc
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Contact "qvi" added/updated.
+Contact "gleif" added/updated.
+Contact "supplierportal" added/updated.
+Contact "crif" added/updated.
+Contact "supplierportal" added/updated.
+Contact "supplierportal" added/updated.
+✅ supplierportal resolved OOBI for gleif
+✅ supplierportal resolved OOBI for qvi
+Contact "supplierportal" added/updated.
+✅ AMAZOFF resolved OOBI for supplierportal
+✅ acme_inc resolved OOBI for supplierportal
+✅ supplierportal resolved OOBI for crif
+✅ qvi resolved OOBI for supplierportal
+Contact "supplierportal" added/updated.
+Contact "AMAZOFF" added/updated.
+Contact "acme_inc" added/updated.
+✅ crif resolved OOBI for supplierportal
+✅ supplierportal resolved OOBI for acme_inc
+✅ gleif resolved OOBI for supplierportal
+✅ supplierportal resolved OOBI for AMAZOFF
+🎉 Successfully resolved OOBIs between all 6 entities
+
+[1m[4m[44m[90m  Resolving Schema OOBIs  [0m
+
+			[42m[33mResolving Schema OOBIs for all clients[0m
+Resolving OOBI URL: http://vlei-server:7723/oobi/ENiOJlEz0_UMIN-olC06myHv8163njRNjFCnePFNKHZH with alias schema-1
+Resolving OOBI URL: http://vlei-server:7723/oobi/EAag5G3RpOTcIgmCJSkz6h_v4BkFhGDQFFYK2gMBVM7P with alias schema-2
+Resolving OOBI URL: http://vlei-server:7723/oobi/EKB7JitBHWnBFzNVeeYeZ9mn93_l_5sR-100MXYxZYJu with alias schema-3
+Resolving OOBI URL: http://vlei-server:7723/oobi/EBfdlu8R27Fbx-ehrqwImnK-8Cm79sqbAQ4MmvEAYqao with alias schema-4
+Resolving OOBI URL: http://vlei-server:7723/oobi/ENPXp1vQzRF6JwIuS-mp2U8Uf1MoADoP_GqQ62VsDZWY with alias schema-5
+Resolving OOBI URL: http://vlei-server:7723/oobi/EH6ekLjSr8V32WyFbGe1zXjTzFs9PkTYmupJ9H65O14g with alias schema-6
+Resolving OOBI URL: http://vlei-server:7723/oobi/EEy9PkikFcANV1l7EHukCeXqrzT1hNZjGlUk7wuMO5jw with alias schema-7
+Resolving OOBI URL: http://vlei-server:7723/oobi/EKA57bKBKxr_kN7iN5i7lMUxpMG-s19dRcmov1iDxz-E with alias schema-8
+Resolving OOBI URL: http://vlei-server:7723/oobi/EBNaNu-M9P5cgrnfl2Fvymy4E_jvxxyjb70PRtiANlJy with alias schema-9
+Resolving OOBI URL: http://vlei-server:7723/oobi/ENiOJlEz0_UMIN-olC06myHv8163njRNjFCnePFNKHZH with alias schema-1
+Resolving OOBI URL: http://vlei-server:7723/oobi/EAag5G3RpOTcIgmCJSkz6h_v4BkFhGDQFFYK2gMBVM7P with alias schema-2
+Resolving OOBI URL: http://vlei-server:7723/oobi/EKB7JitBHWnBFzNVeeYeZ9mn93_l_5sR-100MXYxZYJu with alias schema-3
+Resolving OOBI URL: http://vlei-server:7723/oobi/EBfdlu8R27Fbx-ehrqwImnK-8Cm79sqbAQ4MmvEAYqao with alias schema-4
+Resolving OOBI URL: http://vlei-server:7723/oobi/ENPXp1vQzRF6JwIuS-mp2U8Uf1MoADoP_GqQ62VsDZWY with alias schema-5
+Resolving OOBI URL: http://vlei-server:7723/oobi/EH6ekLjSr8V32WyFbGe1zXjTzFs9PkTYmupJ9H65O14g with alias schema-6
+Resolving OOBI URL: http://vlei-server:7723/oobi/EEy9PkikFcANV1l7EHukCeXqrzT1hNZjGlUk7wuMO5jw with alias schema-7
+Resolving OOBI URL: http://vlei-server:7723/oobi/EKA57bKBKxr_kN7iN5i7lMUxpMG-s19dRcmov1iDxz-E with alias schema-8
+Resolving OOBI URL: http://vlei-server:7723/oobi/EBNaNu-M9P5cgrnfl2Fvymy4E_jvxxyjb70PRtiANlJy with alias schema-9
+Resolving OOBI URL: http://vlei-server:7723/oobi/ENiOJlEz0_UMIN-olC06myHv8163njRNjFCnePFNKHZH with alias schema-1
+Resolving OOBI URL: http://vlei-server:7723/oobi/EAag5G3RpOTcIgmCJSkz6h_v4BkFhGDQFFYK2gMBVM7P with alias schema-2
+Resolving OOBI URL: http://vlei-server:7723/oobi/EKB7JitBHWnBFzNVeeYeZ9mn93_l_5sR-100MXYxZYJu with alias schema-3
+Resolving OOBI URL: http://vlei-server:7723/oobi/EBfdlu8R27Fbx-ehrqwImnK-8Cm79sqbAQ4MmvEAYqao with alias schema-4
+Resolving OOBI URL: http://vlei-server:7723/oobi/ENPXp1vQzRF6JwIuS-mp2U8Uf1MoADoP_GqQ62VsDZWY with alias schema-5
+Resolving OOBI URL: http://vlei-server:7723/oobi/EH6ekLjSr8V32WyFbGe1zXjTzFs9PkTYmupJ9H65O14g with alias schema-6
+Resolving OOBI URL: http://vlei-server:7723/oobi/EEy9PkikFcANV1l7EHukCeXqrzT1hNZjGlUk7wuMO5jw with alias schema-7
+Resolving OOBI URL: http://vlei-server:7723/oobi/EKA57bKBKxr_kN7iN5i7lMUxpMG-s19dRcmov1iDxz-E with alias schema-8
+Resolving OOBI URL: http://vlei-server:7723/oobi/EBNaNu-M9P5cgrnfl2Fvymy4E_jvxxyjb70PRtiANlJy with alias schema-9
+Resolving OOBI URL: http://vlei-server:7723/oobi/ENiOJlEz0_UMIN-olC06myHv8163njRNjFCnePFNKHZH with alias schema-1
+Resolving OOBI URL: http://vlei-server:7723/oobi/EAag5G3RpOTcIgmCJSkz6h_v4BkFhGDQFFYK2gMBVM7P with alias schema-2
+Resolving OOBI URL: http://vlei-server:7723/oobi/EKB7JitBHWnBFzNVeeYeZ9mn93_l_5sR-100MXYxZYJu with alias schema-3
+Resolving OOBI URL: http://vlei-server:7723/oobi/EBfdlu8R27Fbx-ehrqwImnK-8Cm79sqbAQ4MmvEAYqao with alias schema-4
+Resolving OOBI URL: http://vlei-server:7723/oobi/ENPXp1vQzRF6JwIuS-mp2U8Uf1MoADoP_GqQ62VsDZWY with alias schema-5
+Resolving OOBI URL: http://vlei-server:7723/oobi/EH6ekLjSr8V32WyFbGe1zXjTzFs9PkTYmupJ9H65O14g with alias schema-6
+Resolving OOBI URL: http://vlei-server:7723/oobi/EEy9PkikFcANV1l7EHukCeXqrzT1hNZjGlUk7wuMO5jw with alias schema-7
+Resolving OOBI URL: http://vlei-server:7723/oobi/EKA57bKBKxr_kN7iN5i7lMUxpMG-s19dRcmov1iDxz-E with alias schema-8
+Resolving OOBI URL: http://vlei-server:7723/oobi/EBNaNu-M9P5cgrnfl2Fvymy4E_jvxxyjb70PRtiANlJy with alias schema-9
+Resolving OOBI URL: http://vlei-server:7723/oobi/ENiOJlEz0_UMIN-olC06myHv8163njRNjFCnePFNKHZH with alias schema-1
+Resolving OOBI URL: http://vlei-server:7723/oobi/EAag5G3RpOTcIgmCJSkz6h_v4BkFhGDQFFYK2gMBVM7P with alias schema-2
+Resolving OOBI URL: http://vlei-server:7723/oobi/EKB7JitBHWnBFzNVeeYeZ9mn93_l_5sR-100MXYxZYJu with alias schema-3
+Resolving OOBI URL: http://vlei-server:7723/oobi/EBfdlu8R27Fbx-ehrqwImnK-8Cm79sqbAQ4MmvEAYqao with alias schema-4
+Resolving OOBI URL: http://vlei-server:7723/oobi/ENPXp1vQzRF6JwIuS-mp2U8Uf1MoADoP_GqQ62VsDZWY with alias schema-5
+Resolving OOBI URL: http://vlei-server:7723/oobi/EH6ekLjSr8V32WyFbGe1zXjTzFs9PkTYmupJ9H65O14g with alias schema-6
+Resolving OOBI URL: http://vlei-server:7723/oobi/EEy9PkikFcANV1l7EHukCeXqrzT1hNZjGlUk7wuMO5jw with alias schema-7
+Resolving OOBI URL: http://vlei-server:7723/oobi/EKA57bKBKxr_kN7iN5i7lMUxpMG-s19dRcmov1iDxz-E with alias schema-8
+Resolving OOBI URL: http://vlei-server:7723/oobi/EBNaNu-M9P5cgrnfl2Fvymy4E_jvxxyjb70PRtiANlJy with alias schema-9
+Resolving OOBI URL: http://vlei-server:7723/oobi/ENiOJlEz0_UMIN-olC06myHv8163njRNjFCnePFNKHZH with alias schema-1
+Resolving OOBI URL: http://vlei-server:7723/oobi/EAag5G3RpOTcIgmCJSkz6h_v4BkFhGDQFFYK2gMBVM7P with alias schema-2
+Resolving OOBI URL: http://vlei-server:7723/oobi/EKB7JitBHWnBFzNVeeYeZ9mn93_l_5sR-100MXYxZYJu with alias schema-3
+Resolving OOBI URL: http://vlei-server:7723/oobi/EBfdlu8R27Fbx-ehrqwImnK-8Cm79sqbAQ4MmvEAYqao with alias schema-4
+Resolving OOBI URL: http://vlei-server:7723/oobi/ENPXp1vQzRF6JwIuS-mp2U8Uf1MoADoP_GqQ62VsDZWY with alias schema-5
+Resolving OOBI URL: http://vlei-server:7723/oobi/EH6ekLjSr8V32WyFbGe1zXjTzFs9PkTYmupJ9H65O14g with alias schema-6
+Resolving OOBI URL: http://vlei-server:7723/oobi/EEy9PkikFcANV1l7EHukCeXqrzT1hNZjGlUk7wuMO5jw with alias schema-7
+Resolving OOBI URL: http://vlei-server:7723/oobi/EKA57bKBKxr_kN7iN5i7lMUxpMG-s19dRcmov1iDxz-E with alias schema-8
+Resolving OOBI URL: http://vlei-server:7723/oobi/EBNaNu-M9P5cgrnfl2Fvymy4E_jvxxyjb70PRtiANlJy with alias schema-9
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Contact "schema-9" added/updated.
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Contact "schema-7" added/updated.
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Contact "schema-9" added/updated.
+Contact "schema-1" added/updated.
+Contact "schema-3" added/updated.
+Contact "schema-1" added/updated.
+Contact "schema-2" added/updated.
+Contact "schema-5" added/updated.
+Contact "schema-4" added/updated.
+Contact "schema-6" added/updated.
+Contact "schema-8" added/updated.
+Contact "schema-9" added/updated.
+Contact "schema-7" added/updated.
+Contact "schema-1" added/updated.
+Contact "schema-4" added/updated.
+Contact "schema-2" added/updated.
+Contact "schema-3" added/updated.
+Contact "schema-7" added/updated.
+Contact "schema-5" added/updated.
+Contact "schema-6" added/updated.
+Contact "schema-8" added/updated.
+Contact "schema-9" added/updated.
+Contact "schema-3" added/updated.
+Contact "schema-2" added/updated.
+Contact "schema-5" added/updated.
+Contact "schema-6" added/updated.
+Contact "schema-4" added/updated.
+Contact "schema-4" added/updated.
+✅ Client 1 resolved schema OOBI: http://vlei-server:7723/oobi/EBNaNu-M9P5cgrnfl2Fvymy4E_jvxxyjb70PRtiANlJy with alias: schema-9
+Contact "schema-5" added/updated.
+Contact "schema-1" added/updated.
+✅ Client 1 resolved schema OOBI: http://vlei-server:7723/oobi/EEy9PkikFcANV1l7EHukCeXqrzT1hNZjGlUk7wuMO5jw with alias: schema-7
+Contact "schema-2" added/updated.
+Contact "schema-3" added/updated.
+Contact "schema-5" added/updated.
+Contact "schema-8" added/updated.
+✅ Client 3 resolved schema OOBI: http://vlei-server:7723/oobi/EBNaNu-M9P5cgrnfl2Fvymy4E_jvxxyjb70PRtiANlJy with alias: schema-9
+Contact "schema-6" added/updated.
+Contact "schema-1" added/updated.
+✅ Client 4 resolved schema OOBI: http://vlei-server:7723/oobi/EKB7JitBHWnBFzNVeeYeZ9mn93_l_5sR-100MXYxZYJu with alias: schema-3
+✅ Client 2 resolved schema OOBI: http://vlei-server:7723/oobi/ENiOJlEz0_UMIN-olC06myHv8163njRNjFCnePFNKHZH with alias: schema-1
+✅ Client 4 resolved schema OOBI: http://vlei-server:7723/oobi/EAag5G3RpOTcIgmCJSkz6h_v4BkFhGDQFFYK2gMBVM7P with alias: schema-2
+✅ Client 4 resolved schema OOBI: http://vlei-server:7723/oobi/ENiOJlEz0_UMIN-olC06myHv8163njRNjFCnePFNKHZH with alias: schema-1
+✅ Client 4 resolved schema OOBI: http://vlei-server:7723/oobi/ENPXp1vQzRF6JwIuS-mp2U8Uf1MoADoP_GqQ62VsDZWY with alias: schema-5
+✅ Client 4 resolved schema OOBI: http://vlei-server:7723/oobi/EBfdlu8R27Fbx-ehrqwImnK-8Cm79sqbAQ4MmvEAYqao with alias: schema-4
+✅ Client 4 resolved schema OOBI: http://vlei-server:7723/oobi/EH6ekLjSr8V32WyFbGe1zXjTzFs9PkTYmupJ9H65O14g with alias: schema-6
+✅ Client 4 resolved schema OOBI: http://vlei-server:7723/oobi/EKA57bKBKxr_kN7iN5i7lMUxpMG-s19dRcmov1iDxz-E with alias: schema-8
+✅ Client 4 resolved schema OOBI: http://vlei-server:7723/oobi/EBNaNu-M9P5cgrnfl2Fvymy4E_jvxxyjb70PRtiANlJy with alias: schema-9
+✅ Client 4 resolved schema OOBI: http://vlei-server:7723/oobi/EEy9PkikFcANV1l7EHukCeXqrzT1hNZjGlUk7wuMO5jw with alias: schema-7
+✅ Client 5 resolved schema OOBI: http://vlei-server:7723/oobi/EBfdlu8R27Fbx-ehrqwImnK-8Cm79sqbAQ4MmvEAYqao with alias: schema-4
+✅ Client 5 resolved schema OOBI: http://vlei-server:7723/oobi/ENiOJlEz0_UMIN-olC06myHv8163njRNjFCnePFNKHZH with alias: schema-1
+✅ Client 5 resolved schema OOBI: http://vlei-server:7723/oobi/EAag5G3RpOTcIgmCJSkz6h_v4BkFhGDQFFYK2gMBVM7P with alias: schema-2
+✅ Client 5 resolved schema OOBI: http://vlei-server:7723/oobi/EKB7JitBHWnBFzNVeeYeZ9mn93_l_5sR-100MXYxZYJu with alias: schema-3
+✅ Client 5 resolved schema OOBI: http://vlei-server:7723/oobi/EEy9PkikFcANV1l7EHukCeXqrzT1hNZjGlUk7wuMO5jw with alias: schema-7
+✅ Client 5 resolved schema OOBI: http://vlei-server:7723/oobi/ENPXp1vQzRF6JwIuS-mp2U8Uf1MoADoP_GqQ62VsDZWY with alias: schema-5
+Contact "schema-2" added/updated.
+Contact "schema-3" added/updated.
+Contact "schema-4" added/updated.
+Contact "schema-6" added/updated.
+Contact "schema-9" added/updated.
+Contact "schema-8" added/updated.
+Contact "schema-7" added/updated.
+Contact "schema-7" added/updated.
+Contact "schema-8" added/updated.
+✅ Client 5 resolved schema OOBI: http://vlei-server:7723/oobi/EKA57bKBKxr_kN7iN5i7lMUxpMG-s19dRcmov1iDxz-E with alias: schema-8
+✅ Client 5 resolved schema OOBI: http://vlei-server:7723/oobi/EBNaNu-M9P5cgrnfl2Fvymy4E_jvxxyjb70PRtiANlJy with alias: schema-9
+✅ Client 5 resolved schema OOBI: http://vlei-server:7723/oobi/EH6ekLjSr8V32WyFbGe1zXjTzFs9PkTYmupJ9H65O14g with alias: schema-6
+✅ Client 2 resolved schema OOBI: http://vlei-server:7723/oobi/EKB7JitBHWnBFzNVeeYeZ9mn93_l_5sR-100MXYxZYJu with alias: schema-3
+✅ Client 2 resolved schema OOBI: http://vlei-server:7723/oobi/EAag5G3RpOTcIgmCJSkz6h_v4BkFhGDQFFYK2gMBVM7P with alias: schema-2
+✅ Client 2 resolved schema OOBI: http://vlei-server:7723/oobi/ENPXp1vQzRF6JwIuS-mp2U8Uf1MoADoP_GqQ62VsDZWY with alias: schema-5
+✅ Client 2 resolved schema OOBI: http://vlei-server:7723/oobi/EH6ekLjSr8V32WyFbGe1zXjTzFs9PkTYmupJ9H65O14g with alias: schema-6
+✅ Client 2 resolved schema OOBI: http://vlei-server:7723/oobi/EBfdlu8R27Fbx-ehrqwImnK-8Cm79sqbAQ4MmvEAYqao with alias: schema-4
+✅ Client 1 resolved schema OOBI: http://vlei-server:7723/oobi/ENPXp1vQzRF6JwIuS-mp2U8Uf1MoADoP_GqQ62VsDZWY with alias: schema-5
+✅ Client 3 resolved schema OOBI: http://vlei-server:7723/oobi/EBfdlu8R27Fbx-ehrqwImnK-8Cm79sqbAQ4MmvEAYqao with alias: schema-4
+✅ Client 1 resolved schema OOBI: http://vlei-server:7723/oobi/ENiOJlEz0_UMIN-olC06myHv8163njRNjFCnePFNKHZH with alias: schema-1
+✅ Client 3 resolved schema OOBI: http://vlei-server:7723/oobi/EAag5G3RpOTcIgmCJSkz6h_v4BkFhGDQFFYK2gMBVM7P with alias: schema-2
+✅ Client 3 resolved schema OOBI: http://vlei-server:7723/oobi/EKB7JitBHWnBFzNVeeYeZ9mn93_l_5sR-100MXYxZYJu with alias: schema-3
+✅ Client 3 resolved schema OOBI: http://vlei-server:7723/oobi/ENPXp1vQzRF6JwIuS-mp2U8Uf1MoADoP_GqQ62VsDZWY with alias: schema-5
+✅ Client 3 resolved schema OOBI: http://vlei-server:7723/oobi/EKA57bKBKxr_kN7iN5i7lMUxpMG-s19dRcmov1iDxz-E with alias: schema-8
+✅ Client 3 resolved schema OOBI: http://vlei-server:7723/oobi/EH6ekLjSr8V32WyFbGe1zXjTzFs9PkTYmupJ9H65O14g with alias: schema-6
+Successfully resolved OOBI URL. Response: OK
+✅ Client 1 resolved schema OOBI: http://vlei-server:7723/oobi/EAag5G3RpOTcIgmCJSkz6h_v4BkFhGDQFFYK2gMBVM7P with alias: schema-2
+Successfully resolved OOBI URL. Response: OK
+✅ Client 3 resolved schema OOBI: http://vlei-server:7723/oobi/ENiOJlEz0_UMIN-olC06myHv8163njRNjFCnePFNKHZH with alias: schema-1
+Successfully resolved OOBI URL. Response: OK
+✅ Client 2 resolved schema OOBI: http://vlei-server:7723/oobi/EKA57bKBKxr_kN7iN5i7lMUxpMG-s19dRcmov1iDxz-E with alias: schema-8
+✅ Client 3 resolved schema OOBI: http://vlei-server:7723/oobi/EEy9PkikFcANV1l7EHukCeXqrzT1hNZjGlUk7wuMO5jw with alias: schema-7
+✅ Client 1 resolved schema OOBI: http://vlei-server:7723/oobi/EH6ekLjSr8V32WyFbGe1zXjTzFs9PkTYmupJ9H65O14g with alias: schema-6
+✅ Client 1 resolved schema OOBI: http://vlei-server:7723/oobi/EBfdlu8R27Fbx-ehrqwImnK-8Cm79sqbAQ4MmvEAYqao with alias: schema-4
+✅ Client 1 resolved schema OOBI: http://vlei-server:7723/oobi/EKB7JitBHWnBFzNVeeYeZ9mn93_l_5sR-100MXYxZYJu with alias: schema-3
+Successfully resolved OOBI URL. Response: OK
+✅ Client 1 resolved schema OOBI: http://vlei-server:7723/oobi/EKA57bKBKxr_kN7iN5i7lMUxpMG-s19dRcmov1iDxz-E with alias: schema-8
+✅ Client 2 resolved schema OOBI: http://vlei-server:7723/oobi/EEy9PkikFcANV1l7EHukCeXqrzT1hNZjGlUk7wuMO5jw with alias: schema-7
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+✅ Client 2 resolved schema OOBI: http://vlei-server:7723/oobi/EBNaNu-M9P5cgrnfl2Fvymy4E_jvxxyjb70PRtiANlJy with alias: schema-9
+Contact "schema-5" added/updated.
+Contact "schema-6" added/updated.
+Contact "schema-7" added/updated.
+Successfully resolved OOBI URL. Response: OK
+Contact "schema-4" added/updated.
+Contact "schema-1" added/updated.
+Successfully resolved OOBI URL. Response: OK
+Successfully resolved OOBI URL. Response: OK
+Contact "schema-2" added/updated.
+✅ Client 6 resolved schema OOBI: http://vlei-server:7723/oobi/ENPXp1vQzRF6JwIuS-mp2U8Uf1MoADoP_GqQ62VsDZWY with alias: schema-5
+Contact "schema-3" added/updated.
+Contact "schema-8" added/updated.
+✅ Client 6 resolved schema OOBI: http://vlei-server:7723/oobi/EAag5G3RpOTcIgmCJSkz6h_v4BkFhGDQFFYK2gMBVM7P with alias: schema-2
+Contact "schema-9" added/updated.
+✅ Client 6 resolved schema OOBI: http://vlei-server:7723/oobi/EBfdlu8R27Fbx-ehrqwImnK-8Cm79sqbAQ4MmvEAYqao with alias: schema-4
+✅ Client 6 resolved schema OOBI: http://vlei-server:7723/oobi/ENiOJlEz0_UMIN-olC06myHv8163njRNjFCnePFNKHZH with alias: schema-1
+✅ Client 6 resolved schema OOBI: http://vlei-server:7723/oobi/EH6ekLjSr8V32WyFbGe1zXjTzFs9PkTYmupJ9H65O14g with alias: schema-6
+✅ Client 6 resolved schema OOBI: http://vlei-server:7723/oobi/EEy9PkikFcANV1l7EHukCeXqrzT1hNZjGlUk7wuMO5jw with alias: schema-7
+✅ Client 6 resolved schema OOBI: http://vlei-server:7723/oobi/EKB7JitBHWnBFzNVeeYeZ9mn93_l_5sR-100MXYxZYJu with alias: schema-3
+✅ Client 6 resolved schema OOBI: http://vlei-server:7723/oobi/EKA57bKBKxr_kN7iN5i7lMUxpMG-s19dRcmov1iDxz-E with alias: schema-8
+✅ Client 6 resolved schema OOBI: http://vlei-server:7723/oobi/EBNaNu-M9P5cgrnfl2Fvymy4E_jvxxyjb70PRtiANlJy with alias: schema-9
+🎉 Successfully resolved 9 schema(s) for 6 client(s)
+
+[1m[94mTotal operations: 54 schema OOBI resolutions completed[0m
+
+
+[1m[94m🚀 Skipping credential issuance workflow (skipCredentialIssuance = true)[0m
+
+
+[1m[4m[44m[90m  === Entity AIDs Summary ===  [0m
+

@@ -1,0 +1,52 @@
+@chatHost = http://localhost:5001
+@bffHost = http://localhost:5135
+@contentType = application/json
+
+### Test Chat - Send Invitation with LLM-generated content
+POST {{chatHost}}/api/chat
+Content-Type: {{contentType}}
+
+{
+  "message": "Search for Italian companies with more than 50 employees and medium or high risk rating, then send an invitation to the first company for order ORDER-2025-001. Make the email professional and compelling.",
+  "conversationId": "test-conversation-123"
+}
+
+### Test Chat - Create request and send personalized invitations
+POST {{chatHost}}/api/chat
+Content-Type: {{contentType}}
+
+{
+  "message": "Create a supplier request for order ORDER-2025-002 with description 'Office furniture procurement' for total amount €50000, requester LEI is 549300GLEIF12345678, prefix is 'GLEIF', OOBI is 'http://example.com/oobi'. Then search for Italian companies with credit limit over 100000 and send personalized invitations to the top 2 companies explaining why they were selected.",
+  "conversationId": "test-conversation-456"
+}
+
+### Test Direct Email Generation via BFF (without LLM)
+POST {{bffHost}}/api/email/generate
+Content-Type: {{contentType}}
+
+{
+  "llmMessageBody": "Dear [Company Name],\n\nWe are pleased to invite you to participate in a new procurement opportunity.\n\n**Opportunity Details:**\n\n- Order ID: ORDER-2025-001\n- Description: Premium office furniture procurement\n- Total Amount: €75,000\n- Deadline: January 31, 2025\n\n**Why We Selected You:**\n\nBased on your company's excellent credit rating, proven track record, and expertise in furniture manufacturing, we believe you would be an ideal partner for this project.\n\n**Next Steps:**\n\nTo participate in this opportunity, please review the requirements and submit your application through our secure portal.\n\nWe look forward to the possibility of working together.\n\nBest regards,\nTrustSphere Procurement Team",
+  "emailTitle": "Invitation to Participate in Procurement Opportunity",
+  "subject": "Invitation: Office Furniture Procurement - ORDER-2025-001",
+  "ctaText": "Apply to This Request",
+  "ctaUrl": "https://localhost:5135/api/supplier/apply?orderId=ORDER-2025-001&lei=549300EXAMPLE123456",
+  "fileName": "procurement_invitation_example"
+}
+
+### Test Notification Email Generation
+POST {{bffHost}}/api/email/generate-notification
+Content-Type: {{contentType}}
+
+{
+  "title": "New Supplier Invitation Sent",
+  "message": "Your invitation to ACME Corporation has been successfully delivered. They have 7 days to review and apply to your request.",
+  "icon": "✉️",
+  "ctaText": "View Request Status",
+  "ctaUrl": "https://localhost:5135/orders/ORDER-2025-001"
+}
+
+### View Generated Email
+GET {{bffHost}}/api/email/view/procurement_invitation_example.html
+
+### List All Generated Emails
+GET {{bffHost}}/api/email/list

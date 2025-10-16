@@ -1,0 +1,313 @@
+/* Message Response Styling - VLEI Ecosystem Chatbot */
+/* All styles scoped to work within .message-text container */
+
+/* ========================================
+   1. REASONING SECTION - Muted & Subtle
+   ======================================== */
+
+.message-text .reasoning-section {
+  background: #f8f9fa;
+  border-left: 3px solid #e9ecef;
+  padding: 10px 14px;
+  margin: 4px 0;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #6c757d;
+}
+
+.message-text .reasoning-title {
+  font-weight: 600;
+  color: #5a6c7d;
+  margin-bottom: 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.message-text .reasoning-list {
+  margin: 4px 0;
+  padding-left: 20px;
+  line-height: 1.4;
+}
+
+.message-text .reasoning-list li {
+  margin: 2px 0;
+}
+
+/* ========================================
+   2. MAIN CONTENT SECTION - Normal
+   ======================================== */
+
+.message-text .content-section {
+  color: #2c3e50;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 4px 0;
+}
+
+.message-text .content-section p {
+  margin: 2px 0;
+}
+
+.message-text .content-section strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Compact List for Content */
+.message-text .content-list {
+  margin: 4px 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.message-text .content-list-item {
+  padding: 8px 12px;
+  background: white;
+  border-left: 4px solid #5DCEBC;
+  margin-bottom: 4px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.message-text .content-list-item-title {
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.message-text .content-list-item-details {
+  color: #5a6c7d;
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+.message-text .content-list-item-highlight {
+  color: #5DCEBC;
+  font-weight: 500;
+}
+
+/* Compact Data Table */
+.message-text .data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 6px 0;
+  font-size: 13px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.message-text .data-table thead {
+  background: linear-gradient(135deg, #5DCEBC 0%, #48B5A5 100%);
+}
+
+.message-text .data-table th {
+  padding: 10px 12px;
+  text-align: left;
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.message-text .data-table tbody tr {
+  background: white;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.message-text .data-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.message-text .data-table td {
+  padding: 8px 12px;
+  color: #2c3e50;
+}
+
+.message-text .data-table td.highlight {
+  font-weight: 600;
+  color: #5DCEBC;
+}
+
+.message-text .data-table td.secondary {
+  color: #5a6c7d;
+  font-size: 12px;
+}
+
+/* Summary/Info Box */
+.message-text .summary-box {
+  background: white;
+  border: 2px solid #5DCEBC;
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 6px 0;
+}
+
+.message-text .summary-title {
+  font-weight: 700;
+  color: #2c3e50;
+  font-size: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.message-text .summary-icon {
+  color: #5DCEBC;
+  font-size: 16px;
+}
+
+.message-text .summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.message-text .summary-item-label {
+  color: #5a6c7d;
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+.message-text .summary-item-value {
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.message-text .summary-item-value.primary {
+  color: #5DCEBC;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* ========================================
+   3. QUESTION SECTION - Prominent
+   ======================================== */
+
+.message-text .question-section {
+  background: linear-gradient(135deg, #5DCEBC 0%, #48B5A5 100%);
+  color: white;
+  padding: 12px 16px;
+  margin: 6px 0;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(93, 206, 188, 0.3);
+}
+
+.message-text .question-title {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.message-text .question-icon {
+  font-size: 18px;
+}
+
+.message-text .question-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* ========================================
+   4. STEP-BY-STEP PROCESS
+   ======================================== */
+
+.message-text .steps-list {
+  counter-reset: step-counter;
+  list-style: none;
+  padding-left: 0;
+  margin: 6px 0;
+}
+
+.message-text .step-item {
+  counter-increment: step-counter;
+  padding: 8px 12px 8px 40px;
+  position: relative;
+  background: #f8f9fa;
+  margin-bottom: 4px;
+  border-radius: 6px;
+}
+
+.message-text .step-item::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 12px;
+  top: 8px;
+  width: 20px;
+  height: 20px;
+  background: #5DCEBC;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 11px;
+  text-align: center;
+  line-height: 20px;
+}
+
+.message-text .step-title {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+.message-text .step-details {
+  color: #5a6c7d;
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+/* ========================================
+   5. ALERT BOXES
+   ======================================== */
+
+.message-text .alert-box {
+  padding: 10px 14px;
+  margin: 6px 0;
+  border-radius: 4px;
+  border-left: 4px solid;
+}
+
+.message-text .alert-box-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.message-text .alert-box-text {
+  font-size: 14px;
+}
+
+.message-text .alert-warning {
+  background: #fff3cd;
+  border-color: #ffc107;
+  color: #856404;
+}
+
+.message-text .alert-success {
+  background: #d4edda;
+  border-color: #28a745;
+  color: #155724;
+}
+
+.message-text .alert-error {
+  background: #f8d7da;
+  border-color: #dc3545;
+  color: #721c24;
+}
+
+.message-text .alert-info {
+  background: #d1ecf1;
+  border-color: #17a2b8;
+  color: #0c5460;
+}

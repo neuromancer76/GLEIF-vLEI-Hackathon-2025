@@ -1,0 +1,81 @@
+/* Footer Styles */
+.app-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 1rem 1.5rem;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.footer-content {
+  pointer-events: auto;
+}
+
+.powered-by {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.powered-by-text {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.crif-logo {
+  height: 24px;
+  width: auto;
+  transition: opacity 0.2s;
+}
+
+.crif-logo:hover {
+  opacity: 0.8;
+}
+
+.gabbiano-logo {
+  height: 32px;
+  width: auto;
+  transition: opacity 0.2s;
+}
+
+.gabbiano-logo:hover {
+  opacity: 0.8;
+}
+
+.crif-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2c3e50;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-footer {
+    padding: 0.75rem 1rem;
+  }
+
+  .powered-by {
+    padding: 0.4rem 0.75rem;
+  }
+
+  .powered-by-text {
+    font-size: 0.75rem;
+  }
+
+  .crif-logo {
+    height: 20px;
+  }
+
+  .gabbiano-logo {
+    height: 24px;
+  }
+
+  .crif-text {
+    font-size: 0.95rem;
+  }
+}

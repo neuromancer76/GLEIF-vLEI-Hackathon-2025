@@ -1,0 +1,298 @@
+openapi: 3.0.3
+info:
+  title: VLEI KERIA API
+  description: |
+    API for issuing and revoking VLEI risk lens credentials.
+    
+    This specification documents the available endpoints exposed by the VLEI KERIA proxy service.
+  version: 1.0.0
+  contact:
+    name: VLEI Support
+servers:
+  - url: http://localhost:3000/api/v1
+    description: Local development server
+paths:
+  /health:
+    get:
+      summary: Health check
+      description: Returns the health status of the API service.
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+  /credentials/issue-risk-lens:
+    post:
+      summary: Issue Risk Lens credential
+      description: Issues a Risk Lens credential for a destination entity.
+      tags:
+        - Credentials
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RiskLensCredentialRequest'
+      responses:
+        '201':
+          description: Credential issued successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CredentialResponse'
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Server error issuing credential
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /credentials/revoke:
+    delete:
+      summary: Revoke credential
+      description: Revokes a credential using its SAID.
+      tags:
+        - Credentials
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RevokeCredentialRequest'
+      responses:
+        '200':
+          description: Credential revoked successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CredentialResponse'
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Server error revoking credential
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /credentials/assign-to-application:
+    post:
+      summary: Assign credential to application
+      description: Assigns a credential to a target application identified by its AID.
+      tags:
+        - Credentials
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AssignCredentialRequest'
+      responses:
+        '200':
+          description: Credential assigned successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CredentialResponse'
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Server error assigning credential
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    RiskIndicator:
+      type: object
+      properties:
+        score:
+          type: number
+          description: Risk assessment score or rating
+          example: 75.5
+        category:
+          type: string
+          description: Risk category or type
+          example: medium-risk
+        metadata:
+          type: object
+          additionalProperties: true
+          description: Optional risk metadata
+          example:
+            assessmentDate: '2025-10-08'
+            assessor: risk-engine-v1
+      required:
+        - score
+        - category
+    CreditLimit:
+      type: object
+      properties:
+        amount:
+          type: number
+          description: Credit limit amount
+          example: 100000
+        currency:
+          type: string
+          description: Currency code
+          example: USD
+        type:
+          type: string
+          description: Credit limit type or classification
+          example: revolving
+      required:
+        - amount
+        - currency
+    RiskLensCredentialRequest:
+      type: object
+      properties:
+        riskIndicator:
+          $ref: '#/components/schemas/RiskIndicator'
+        creditLimit:
+          $ref: '#/components/schemas/CreditLimit'
+        aid:
+          type: string
+          description: AID of the destination entity
+          example: EKYLUMmNPuoqfVjLVbpkRAEldY3z7F8xzLJhRU7V89eI
+      required:
+        - riskIndicator
+        - creditLimit
+        - aid
+    RevokeCredentialRequest:
+      type: object
+      properties:
+        said:
+          type: string
+          description: SAID of the credential to revoke
+          example: EZ8R1G0Yv5p4q7x9Wh2s3d5f6g7h8j9k0l1m2n3o4p
+      required:
+        - said
+    AssignCredentialRequest:
+      type: object
+      properties:
+        targetAid:
+          type: string
+          description: Target AID of the application to assign the credential to
+          example: EKYLUMmNPuoqfVjLVbpkRAEldY3z7F8xzLJhRU7V89eI
+      required:
+        - targetAid
+    CredentialData:
+      type: object
+      properties:
+        credentialId:
+          type: string
+          description: Identifier of the issued credential
+          example: cred_1728385200000_abc123def
+        said:
+          type: string
+          description: SAID of the credential
+          example: EZ8R1G0Yv5p4q7x9Wh2s3d5f6g7h8j9k0l1m2n3o4p
+        issuedAt:
+          type: string
+          format: date-time
+          description: Timestamp when credential was issued
+        revokedAt:
+          type: string
+          format: date-time
+          description: Timestamp when credential was revoked
+        assignedAt:
+          type: string
+          format: date-time
+          description: Timestamp when credential was assigned
+        targetAid:
+          type: string
+          description: Target AID the credential was assigned to
+    ApiError:
+      type: object
+      properties:
+        code:
+          type: string
+          description: Error code identifier
+          example: VALIDATION_ERROR
+        message:
+          type: string
+          description: Error message
+          example: Invalid request parameters
+        details:
+          description: Additional error details
+      required:
+        - code
+        - message
+    ApiResponseBase:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Indicates success status
+        data:
+          description: Response data payload
+        error:
+          $ref: '#/components/schemas/ApiError'
+        timestamp:
+          type: string
+          format: date-time
+          description: Response timestamp
+      required:
+        - success
+        - timestamp
+    CredentialResponse:
+      allOf:
+        - $ref: '#/components/schemas/ApiResponseBase'
+        - type: object
+          properties:
+            data:
+              $ref: '#/components/schemas/CredentialData'
+    ErrorResponse:
+      allOf:
+        - $ref: '#/components/schemas/ApiResponseBase'
+        - type: object
+          properties:
+            error:
+              $ref: '#/components/schemas/ApiError'
+    HealthResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        data:
+          type: object
+          properties:
+            status:
+              type: string
+              example: healthy
+            service:
+              type: string
+              example: VLEI KERIA API
+            version:
+              type: string
+              example: 1.0.0
+            timestamp:
+              type: string
+              format: date-time
+          required:
+            - status
+            - service
+            - version
+            - timestamp
+        timestamp:
+          type: string
+          format: date-time
+      required:
+        - success
+        - data
+        - timestamp

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Turquoise geometric sphere -->
+  <defs>
+    <linearGradient id="sphereGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4DD4C1;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1DAC93;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0D7C6C;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main sphere -->
+  <circle cx="100" cy="100" r="85" fill="url(#sphereGradient)" opacity="0.9"/>
+  
+  <!-- Geometric facets to create icosahedron look -->
+  <polygon points="100,15 140,50 100,50" fill="#2BC4AC" opacity="0.8"/>
+  <polygon points="100,15 60,50 100,50" fill="#17B39D" opacity="0.7"/>
+  <polygon points="140,50 170,85 140,85" fill="#1DAC93" opacity="0.8"/>
+  <polygon points="60,50 30,85 60,85" fill="#15A188" opacity="0.7"/>
+  <polygon points="100,50 140,85 100,85" fill="#2BC4AC" opacity="0.9"/>
+  <polygon points="100,50 60,85 100,85" fill="#1DAC93" opacity="0.8"/>
+  <polygon points="140,85 170,120 140,120" fill="#17B39D" opacity="0.7"/>
+  <polygon points="60,85 30,120 60,120" fill="#1DAC93" opacity="0.8"/>
+  <polygon points="100,85 140,120 100,120" fill="#2BC4AC" opacity="0.9"/>
+  <polygon points="100,85 60,120 100,120" fill="#17B39D" opacity="0.8"/>
+  <polygon points="140,120 170,155 140,155" fill="#15A188" opacity="0.7"/>
+  <polygon points="60,120 30,155 60,155" fill="#17B39D" opacity="0.8"/>
+  <polygon points="100,120 140,155 100,155" fill="#1DAC93" opacity="0.9"/>
+  <polygon points="100,120 60,155 100,155" fill="#2BC4AC" opacity="0.8"/>
+  <polygon points="100,155 140,185 100,185" fill="#17B39D" opacity="0.7"/>
+  <polygon points="100,155 60,185 100,185" fill="#1DAC93" opacity="0.8"/>
+  
+  <!-- Highlight for 3D effect -->
+  <ellipse cx="80" cy="70" rx="30" ry="25" fill="#FFFFFF" opacity="0.15"/>
+</svg>

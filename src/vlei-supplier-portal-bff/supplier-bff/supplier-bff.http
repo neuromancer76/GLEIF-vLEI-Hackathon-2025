@@ -1,0 +1,149 @@
+@supplier-bff_HostAddress = https://localhost:7010
+
+### Create Supplier Request
+POST {{supplier-bff_HostAddress}}/api/supplier/create-request
+Content-Type: application/json
+
+{
+  "orderDetails": {
+    "orderId": "ORDER-001",
+    "description": "Software Development Services",
+    "totalAmount": "50000.00"
+  },
+  "requester": {
+    "prefix": "TECHCORP",
+    "lei": "5493003FVWLMBFTISI11",
+    "oobi": "http://techcorp.com/oobi"
+  },
+  "candidates": [
+    {
+      "lei": "LEI123456789012345678",
+      "supplierEmail": "contact@suppliera.com",
+      "applied": false
+    },
+    {
+      "lei": "LEI987654321098765432",
+      "supplierEmail": "info@supplierb.com",
+      "applied": false
+    }
+  ]
+}
+
+### Send Supplier Invitation
+POST {{supplier-bff_HostAddress}}/api/supplier/send-invitation
+Content-Type: application/json
+OrderId: ORDER-001
+
+{
+  "body": "Dear Supplier, we would like to invite you to participate in our procurement process for software development services.",
+  "supplierEmail": "contact@suppliera.com"
+}
+
+### Apply to Request (via GET - as it would be called from email link)
+POST {{supplier-bff_HostAddress}}/api/supplier/apply?orderId=ORDER-001&supplierEmail=contact@suppliera.com
+
+### Get Order Details
+GET {{supplier-bff_HostAddress}}/api/supplier/order/ORDER-001
+Accept: application/json
+
+### Get Order List for Company
+GET {{supplier-bff_HostAddress}}/api/supplier/orders?lei=5493003FVWLMBFTISI11
+Accept: application/json
+
+### Get Order List with Signify Headers
+GET {{supplier-bff_HostAddress}}/api/supplier/orders?lei=5493003FVWLMBFTISI11
+Accept: application/json
+signature: indexed="?0";signify="0BB3IrmO_gRvi7WvPgPRs2hdmw3Jk4h7joFRSomHahXZIzI524g4SI8P-p9TCO1KhyHa5JFt-JPB5HB2mNq0ru4D"
+signature-input: signify=("@method" "@path" "signify-resource" "signify-timestamp");created=1759338969;keyid="DAUpefduMnqhpOaPHzzVJDDSkJ8-k5id9iEKIw1v2XVz";alg="ed25519"
+signify-resource: EKs4NyFyOX_bjy3ZE0NK_GTNxidpulele-dSy4pyFbyi
+signify-timestamp: 2025-10-01T17:16:09.525000+00:00
+
+### Debug Signify Headers Endpoint
+GET {{supplier-bff_HostAddress}}/api/supplier/debug/signify-headers
+Accept: application/json
+signature: indexed="?0";signify="0BB3IrmO_gRvi7WvPgPRs2hdmw3Jk4h7joFRSomHahXZIzI524g4SI8P-p9TCO1KhyHa5JFt-JPB5HB2mNq0ru4D"
+signature-input: signify=("@method" "@path" "signify-resource" "signify-timestamp");created=1759338969;keyid="DAUpefduMnqhpOaPHzzVJDDSkJ8-k5id9iEKIw1v2XVz";alg="ed25519"
+signify-resource: EKs4NyFyOX_bjy3ZE0NK_GTNxidpulele-dSy4pyFbyi
+signify-timestamp: 2025-10-01T17:16:09.525000+00:00
+
+### Create Supplier Request with Signify Headers
+POST {{supplier-bff_HostAddress}}/api/supplier/create-request
+Content-Type: application/json
+signature: indexed="?0";signify="0BB3IrmO_gRvi7WvPgPRs2hdmw3Jk4h7joFRSomHahXZIzI524g4SI8P-p9TCO1KhyHa5JFt-JPB5HB2mNq0ru4D"
+signature-input: signify=("@method" "@path" "signify-resource" "signify-timestamp");created=1759338969;keyid="DAUpefduMnqhpOaPHzzVJDDSkJ8-k5id9iEKIw1v2XVz";alg="ed25519"
+signify-resource: EKs4NyFyOX_bjy3ZE0NK_GTNxidpulele-dSy4pyFbyi
+signify-timestamp: 2025-10-01T17:16:09.525000+00:00
+
+{
+  "orderDetails": {
+    "orderId": "ORDER-002-SIGNIFY",
+    "description": "Software Development Services with Signify Authentication",
+    "totalAmount": "75000.00"
+  },
+  "requester": {
+    "prefix": "TECHCORP",
+    "lei": "5493003FVWLMBFTISI11",
+    "oobi": "http://techcorp.com/oobi"
+  },
+  "candidates": [
+    {
+      "lei": "LEI123456789012345678",
+      "supplierEmail": "contact@suppliera.com",
+      "applied": false
+    }
+  ]
+}
+
+### Test Secure Endpoint without Signify Headers (should fail)
+GET {{supplier-bff_HostAddress}}/api/supplier/secure-data
+Accept: application/json
+
+### Test Secure Endpoint with Valid Signify Headers (should succeed)
+GET {{supplier-bff_HostAddress}}/api/supplier/secure-data
+Accept: application/json
+signature: indexed="?0";signify="0BB3IrmO_gRvi7WvPgPRs2hdmw3Jk4h7joFRSomHahXZIzI524g4SI8P-p9TCO1KhyHa5JFt-JPB5HB2mNq0ru4D"
+signature-input: signify=("@method" "@path" "signify-resource" "signify-timestamp");created=1759338969;keyid="DAUpefduMnqhpOaPHzzVJDDSkJ8-k5id9iEKIw1v2XVz";alg="ed25519"
+signify-resource: EKs4NyFyOX_bjy3ZE0NK_GTNxidpulele-dSy4pyFbyi
+signify-timestamp: 2025-10-01T17:16:09.525000+00:00
+
+### Get Company Data from GLEIF API by LEI
+GET {{supplier-bff_HostAddress}}/api/supplier/company-data/5493003FVWLMBFTISI11
+Accept: application/json
+
+### Get Company Data with Signify Headers
+GET {{supplier-bff_HostAddress}}/api/supplier/company-data/5493003FVWLMBFTISI11
+Accept: application/json
+signature: indexed="?0";signify="0BB3IrmO_gRvi7WvPgPRs2hdmw3Jk4h7joFRSomHahXZIzI524g4SI8P-p9TCO1KhyHa5JFt-JPB5HB2mNq0ru4D"
+signature-input: signify=("@method" "@path" "signify-resource" "signify-timestamp");created=1759338969;keyid="DAUpefduMnqhpOaPHzzVJDDSkJ8-k5id9iEKIw1v2XVz";alg="ed25519"
+signify-resource: EKs4NyFyOX_bjy3ZE0NK_GTNxidpulele-dSy4pyFbyi
+signify-timestamp: 2025-10-01T17:16:09.525000+00:00
+
+### Test with Invalid LEI (should return 400)
+GET {{supplier-bff_HostAddress}}/api/supplier/company-data/INVALID_LEI
+Accept: application/json
+
+### Test with Non-existent LEI (should return 404)
+GET {{supplier-bff_HostAddress}}/api/supplier/company-data/1234567890ABCDEF1234
+Accept: application/json
+
+### Confirm Grant (Step 1 - creates login session)
+POST {{supplier-bff_HostAddress}}/api/supplier/confirm-grant?entityAid=EDP1vHcw_wc4M__Fj53-cJaBnZZASd-aMTaSyWEQ-PC2&credentialSchemaAid=ENPXp1vQzRF6JwIuS-mp2U8Uf1MoADoP_GqQ62VsDZWY&vlei=IT-VLEI-12345678&validatedCredential=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+Accept: application/json
+
+### Check Credentials (Step 2 - polls for confirmed grant, max 10 seconds)
+POST {{supplier-bff_HostAddress}}/api/supplier/check-credentials?entityAid=EDP1vHcw_wc4M__Fj53-cJaBnZZASd-aMTaSyWEQ-PC2&credentialSchemaAid=ENPXp1vQzRF6JwIuS-mp2U8Uf1MoADoP_GqQ62VsDZWY
+Accept: application/json
+
+### Check Credentials Timeout Test (no grant confirmed - will timeout after 10 seconds)
+POST {{supplier-bff_HostAddress}}/api/supplier/check-credentials?entityAid=NONEXISTENT-AID&credentialSchemaAid=NONEXISTENT-SCHEMA
+Accept: application/json
+
+### Get Application Details (AID, OObi, Credential Schema AID)
+GET {{supplier-bff_HostAddress}}/api/supplier/application-details
+Accept: application/json
+
+### Get Required Risk Schema Credential AID
+GET {{supplier-bff_HostAddress}}/api/supplier/required-risk-schema-credential-aid
+Accept: application/json
+
+###

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VLEI Supplier Portal - Test Links</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .link {
+            display: block;
+            background: #fff;
+            padding: 15px;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #333;
+            border-radius: 4px;
+            border-left: 4px solid #ff9900;
+        }
+        .link:hover {
+            background: #e8f0fe;
+        }
+        .code {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>VLEI Supplier Portal - Test Page</h1>
+    
+    <div class="container">
+        <h2>🏢 Company Portal</h2>
+        <p>Access the company portal to manage orders and send invitations:</p>
+        <a href="http://localhost:5173/company" class="link" target="_blank">
+            <strong>Company Portal</strong><br>
+            http://localhost:5173/company
+        </a>
+        
+        <h3>Sample Company Login Data:</h3>
+        <div class="code">
+Company Name: ACME Corporation
+Address: 123 Business Street, New York, NY 10001
+Prefix: ACME
+OOBI: http://localhost:5156/oobi/EBfdlu8R27Fbx-ehrqwImnK-8Cm79sqbAQ4MmvEAYqao
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>📦 Supplier Portal Links</h2>
+        <p>These are sample supplier invitation links for testing:</p>
+        
+        <a href="http://localhost:5173/supplier?orderId=ORD-2024-001&email=contact@techsolutions.com" class="link" target="_blank">
+            <strong>Tech Solutions Inc.</strong><br>
+            Order: ORD-2024-001 | Email: contact@techsolutions.com
+        </a>
+        
+        <a href="http://localhost:5173/supplier?orderId=ORD-2024-001&email=sales@globalsystems.com" class="link" target="_blank">
+            <strong>Global Systems Ltd.</strong><br>
+            Order: ORD-2024-001 | Email: sales@globalsystems.com
+        </a>
+        
+        <a href="http://localhost:5173/supplier?orderId=ORD-2024-001&email=info@digitalinnovations.com" class="link" target="_blank">
+            <strong>Digital Innovations Co.</strong><br>
+            Order: ORD-2024-001 | Email: info@digitalinnovations.com
+        </a>
+    </div>
+
+    <div class="container">
+        <h2>🚀 Getting Started</h2>
+        <p>To run the application:</p>
+        <div class="code">
+1. Make sure your backend API is running on http://localhost:5178
+2. Navigate to the supplier-portal directory
+3. Run: npm run dev
+4. Open http://localhost:5173 in your browser
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>🔧 Features Implemented</h2>
+        <ul>
+            <li>✅ Company authentication and login</li>
+            <li>✅ Orders dashboard with list view</li>
+            <li>✅ Order creation with supplier candidates</li>
+            <li>✅ Order details view with supplier management</li>
+            <li>✅ Email invitation system</li>
+            <li>✅ Supplier portal with order details</li>
+            <li>✅ Supplier application process</li>
+            <li>✅ Error handling with popup modals</li>
+            <li>✅ Amazon-inspired responsive design</li>
+            <li>✅ TypeScript with proper type definitions</li>
+        </ul>
+    </div>
+</body>
+</html>

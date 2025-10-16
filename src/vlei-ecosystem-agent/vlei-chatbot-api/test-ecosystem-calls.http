@@ -1,0 +1,39 @@
+### Test VLEI Ecosystem Call Messages
+
+# Start the chatbot API first:
+# cd vlei-ecosystem-agent\vlei-chatbot-api && dotnet run
+
+### 1. Start a new conversation
+POST http://localhost:5184/api/Chat/start
+Content-Type: application/json
+
+{
+    "initialMessage": "I'm the CEO of a company with LEI: 549300ABCDEF123456789"
+}
+
+### 2. Send a message that should trigger tool calls
+POST http://localhost:5184/api/Chat/message
+Content-Type: application/json
+
+{
+    "message": "Search for companies in Italy with more than 100 employees",
+    "conversationId": "{{conversationId}}"
+}
+
+### 3. Send another message to test different tool calls
+POST http://localhost:5184/api/Chat/message
+Content-Type: application/json
+
+{
+    "message": "Validate my LEI credentials and check supplier status",
+    "conversationId": "{{conversationId}}"
+}
+
+### 4. Test query functionality
+POST http://localhost:5184/api/Chat/message
+Content-Type: application/json
+
+{
+    "message": "Generate a report about companies in Lombardia region",
+    "conversationId": "{{conversationId}}"
+}

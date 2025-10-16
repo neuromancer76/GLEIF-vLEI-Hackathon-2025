@@ -1,0 +1,6 @@
+@VleiApplicationRegistry_HostAddress = http://localhost:5136
+
+GET {{VleiApplicationRegistry_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

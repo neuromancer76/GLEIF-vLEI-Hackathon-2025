@@ -1,0 +1,744 @@
+{
+  "sad": {
+    "v": "ACDC10JSON0007e2_",
+    "d": "EErQ0NarVGPNP_PiHrmglKDX7cyG9qHh0wWSePLeTfaJ",
+    "i": "EHk4R2o-7ZTihOOrtsIesiZlZLfcgxXpDf065BZrSqmd",
+    "ri": "ECKy2cLUZ6KYDnqMgay1S6V-W7mmxnv50iEeiZFDKY1p",
+    "s": "ENiOJlEz0_UMIN-olC06myHv8163njRNjFCnePFNKHZH",
+    "a": {
+      "d": "EL3z743WPI3J1SAIE7p1U7JrBSEcKElnxjc5nytW41Ir",
+      "i": "ELvQXFDTVc_ABEy3E0H62p4aihkdhpmyBn6IncCqsOqh",
+      "AID": "",
+      "riskIndicator": "A",
+      "creditLimit": 10000,
+      "dt": "2025-10-10T16:33:10.120000+00:00"
+    },
+    "e": {
+      "d": "EAseBhAmnwS8K67f3syQwToYagLUCofLTGB0xHb6bEPR",
+      "certificator": {
+        "n": "EDjCWEvXt9xWnM_2dNTBXSoDcjA3y4YueQ-M1tdM0nFW",
+        "s": "EKB7JitBHWnBFzNVeeYeZ9mn93_l_5sR-100MXYxZYJu"
+      }
+    },
+    "r": {
+      "d": "EKHMDCNFlMBaMdDOq5Pf_vGMxkTqrDMrTx_28cZZJCcW",
+      "usageDisclaimer": {
+        "l": "Usage of a valid, unexpired, and non-revoked vLEI Credential, as defined in the associated Ecosystem Governance Framework, does not assert that the Legal Entity is trustworthy, honest, reputable in its business dealings, safe to do business with, or compliant with any laws or that an implied or expressly intended purpose will be fulfilled."
+      },
+      "issuanceDisclaimer": {
+        "l": "All information in a valid, unexpired, and non-revoked vLEI Credential, as defined in the associated Ecosystem Governance Framework, is accurate as of the date the validation process was complete. The vLEI Credential has been issued to the legal entity or person named in the vLEI Credential as the subject; and the qualified vLEI Issuer exercised reasonable care to perform the validation process set forth in the vLEI Ecosystem Governance Framework."
+      },
+      "privacyDisclaimer": {
+        "l": "Privacy Considerations are applicable to QVI ECR AUTH vLEI Credentials.  It is the sole responsibility of QVIs as Issuees of QVI ECR AUTH vLEI Credentials to present these Credentials in a privacy-preserving manner using the mechanisms provided in the Issuance and Presentation Exchange (IPEX) protocol specification and the Authentic Chained Data Container (ACDC) specification.  https://github.com/WebOfTrust/IETF-IPEX and https://github.com/trustoverip/tswg-acdc-specification."
+      }
+    }
+  },
+  "atc": "-IABEErQ0NarVGPNP_PiHrmglKDX7cyG9qHh0wWSePLeTfaJ0AAAAAAAAAAAAAAAAAAAAAAAEErQ0NarVGPNP_PiHrmglKDX7cyG9qHh0wWSePLeTfaJ",
+  "iss": {
+    "v": "KERI10JSON0000ed_",
+    "t": "iss",
+    "d": "EKeaRsbfq4jsYLa7w2PEl8NszpPLVDjOTl3eOwsXMbkO",
+    "i": "EErQ0NarVGPNP_PiHrmglKDX7cyG9qHh0wWSePLeTfaJ",
+    "s": "0",
+    "ri": "ECKy2cLUZ6KYDnqMgay1S6V-W7mmxnv50iEeiZFDKY1p",
+    "dt": "2025-10-10T16:33:10.120000+00:00"
+  },
+  "issatc": "-VAS-GAB0AAAAAAAAAAAAAAAAAAAAAACEIvhr9-DewlZU6c33kpB1TGH6NgzHBqUb7ofdFgjiS2T",
+  "pre": "EHk4R2o-7ZTihOOrtsIesiZlZLfcgxXpDf065BZrSqmd",
+  "schema": {
+    "$id": "ENiOJlEz0_UMIN-olC06myHv8163njRNjFCnePFNKHZH",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "ECR Authorization vLEI Risk Credential",
+    "description": "ECR Authorization vLEI Risk Credential: a credential that certify the risk situation of a company",
+    "type": "object",
+    "credentialType": "ECRAuthorizationvLEICredential",
+    "version": "1.0.0",
+    "properties": {
+      "v": {
+        "description": "Version",
+        "type": "string"
+      },
+      "d": {
+        "description": "Credential SAID",
+        "type": "string"
+      },
+      "u": {
+        "description": "One time use nonce",
+        "type": "string"
+      },
+      "i": {
+        "description": "LE Issuer AID",
+        "type": "string"
+      },
+      "ri": {
+        "description": "Credential status registry",
+        "type": "string"
+      },
+      "s": {
+        "description": "Schema SAID",
+        "type": "string"
+      },
+      "a": {
+        "oneOf": [
+          {
+            "description": "Attributes block SAID",
+            "type": "string"
+          },
+          {
+            "$id": "EB6DjZw0t0MzYedBdHW5f9QxTv4z3lZ1l093REb7BpIL",
+            "description": "Attributes block",
+            "type": "object",
+            "properties": {
+              "d": {
+                "description": "Attributes block SAID",
+                "type": "string"
+              },
+              "i": {
+                "description": "QVI Issuee AID",
+                "type": "string"
+              },
+              "dt": {
+                "description": "Issuance date time",
+                "type": "string",
+                "format": "date-time"
+              },
+              "AID": {
+                "description": "AID of the intended recipient of the ECR credential",
+                "type": "string"
+              },
+              "riskIndicator": {
+                "description": "This is a single letter A,B,C,D,E,F,G,H indicating the risk level of the legal entity",
+                "type": "string"
+              },
+              "creditLimit": {
+                "description": "This indicating the credit limit assigned to the legal entity: it represent the maximum amount of credit that the legal entity can use",
+                "type": "integer"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "i",
+              "dt",
+              "AID",
+              "riskIndicator",
+              "creditLimit"
+            ]
+          }
+        ]
+      },
+      "e": {
+        "oneOf": [
+          {
+            "description": "Edges block SAID",
+            "type": "string"
+          },
+          {
+            "$id": "EHQHA141OQa7ygx23CCPiu9rY4CscJN2PT8D5ZWeo9dv",
+            "description": "Edges block",
+            "type": "object",
+            "properties": {
+              "d": {
+                "description": "Edges block SAID",
+                "type": "string"
+              },
+              "certificator": {
+                "description": "Chain to legal entity vLEI credential",
+                "type": "object",
+                "properties": {
+                  "n": {
+                    "description": "certificator credential SAID",
+                    "type": "string"
+                  },
+                  "s": {
+                    "description": "SAID of required schema of the credential pointed to by this node",
+                    "type": "string",
+                    "const": "EKB7JitBHWnBFzNVeeYeZ9mn93_l_5sR-100MXYxZYJu"
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "n",
+                  "s"
+                ]
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "d",
+              "certificator"
+            ]
+          }
+        ]
+      },
+      "r": {
+        "oneOf": [
+          {
+            "description": "Rules block SAID",
+            "type": "string"
+          },
+          {
+            "$id": "ELLuSgEW2h8n5fHKLvZc9uTtxzqXQqlWR7MiwEt7AcmM",
+            "description": "Rules block",
+            "type": "object",
+            "properties": {
+              "d": {
+                "description": "Rules block SAID",
+                "type": "string"
+              },
+              "usageDisclaimer": {
+                "description": "Usage Disclaimer",
+                "type": "object",
+                "properties": {
+                  "l": {
+                    "description": "Associated legal language",
+                    "type": "string",
+                    "const": "Usage of a valid, unexpired, and non-revoked vLEI Credential, as defined in the associated Ecosystem Governance Framework, does not assert that the Legal Entity is trustworthy, honest, reputable in its business dealings, safe to do business with, or compliant with any laws or that an implied or expressly intended purpose will be fulfilled."
+                  }
+                }
+              },
+              "issuanceDisclaimer": {
+                "description": "Issuance Disclaimer",
+                "type": "object",
+                "properties": {
+                  "l": {
+                    "description": "Associated legal language",
+                    "type": "string",
+                    "const": "All information in a valid, unexpired, and non-revoked vLEI Credential, as defined in the associated Ecosystem Governance Framework, is accurate as of the date the validation process was complete. The vLEI Credential has been issued to the legal entity or person named in the vLEI Credential as the subject; and the qualified vLEI Issuer exercised reasonable care to perform the validation process set forth in the vLEI Ecosystem Governance Framework."
+                  }
+                }
+              },
+              "privacyDisclaimer": {
+                "description": "Privacy Disclaimer",
+                "type": "object",
+                "properties": {
+                  "l": {
+                    "description": "Associated legal language",
+                    "type": "string",
+                    "const": "Privacy Considerations are applicable to QVI ECR AUTH vLEI Credentials.  It is the sole responsibility of QVIs as Issuees of QVI ECR AUTH vLEI Credentials to present these Credentials in a privacy-preserving manner using the mechanisms provided in the Issuance and Presentation Exchange (IPEX) protocol specification and the Authentic Chained Data Container (ACDC) specification.  https://github.com/WebOfTrust/IETF-IPEX and https://github.com/trustoverip/tswg-acdc-specification."
+                  }
+                }
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "d",
+              "usageDisclaimer",
+              "issuanceDisclaimer",
+              "privacyDisclaimer"
+            ]
+          }
+        ]
+      }
+    },
+    "additionalProperties": false,
+    "required": [
+      "i",
+      "ri",
+      "s",
+      "d",
+      "e",
+      "r"
+    ]
+  },
+  "chains": [
+    {
+      "sad": {
+        "v": "ACDC10JSON0005d6_",
+        "d": "EDjCWEvXt9xWnM_2dNTBXSoDcjA3y4YueQ-M1tdM0nFW",
+        "i": "EMzTKQcONgZEyr385OE8YRqYX3X0hDye9bC9v432T3bP",
+        "ri": "EFIn8eXP8Rlm8ZZpf9_saZJVJQsVvvYohH10eNAmLrJ2",
+        "s": "EKB7JitBHWnBFzNVeeYeZ9mn93_l_5sR-100MXYxZYJu",
+        "a": {
+          "d": "EP_tZJSYduisHa2HHTdBUfDv5u7VORORRcmLhqDtycfU",
+          "i": "EHk4R2o-7ZTihOOrtsIesiZlZLfcgxXpDf065BZrSqmd",
+          "certificationType": "Risk, Esg, Insurance",
+          "dt": "2025-10-10T16:33:02.889000+00:00"
+        },
+        "e": {
+          "d": "EGDLo5AHL6fEfFVxGC-q_rDXxLHmAVQDQSH7j93Z2WpZ",
+          "qvi": {
+            "n": "EDQ0Cel12683oYnHgZNNzIfcwZKMJ3F-C-8gSVrbitv4",
+            "s": "EBfdlu8R27Fbx-ehrqwImnK-8Cm79sqbAQ4MmvEAYqao"
+          }
+        },
+        "r": {
+          "d": "EGZ97EjPSINR-O-KHDN_uw4fdrTxeuRXrqT5ZHHQJujQ",
+          "usageDisclaimer": {
+            "l": "Usage of a valid, unexpired, and non-revoked vLEI Credential, as defined in the associated Ecosystem Governance Framework, does not assert that the Legal Entity is trustworthy, honest, reputable in its business dealings, safe to do business with, or compliant with any laws or that an implied or expressly intended purpose will be fulfilled."
+          },
+          "issuanceDisclaimer": {
+            "l": "All information in a valid, unexpired, and non-revoked vLEI Credential, as defined in the associated Ecosystem Governance Framework, is accurate as of the date the validation process was complete. The vLEI Credential has been issued to the legal entity or person named in the vLEI Credential as the subject; and the qualified vLEI Issuer exercised reasonable care to perform the validation process set forth in the vLEI Ecosystem Governance Framework."
+          }
+        }
+      },
+      "atc": "-IABEDjCWEvXt9xWnM_2dNTBXSoDcjA3y4YueQ-M1tdM0nFW0AAAAAAAAAAAAAAAAAAAAAAAEDjCWEvXt9xWnM_2dNTBXSoDcjA3y4YueQ-M1tdM0nFW",
+      "iss": {
+        "v": "KERI10JSON0000ed_",
+        "t": "iss",
+        "d": "EEDv0nmzr2-1bpNeREzO4Yz15jNRULAYG3q1KivLUiwZ",
+        "i": "EDjCWEvXt9xWnM_2dNTBXSoDcjA3y4YueQ-M1tdM0nFW",
+        "s": "0",
+        "ri": "EFIn8eXP8Rlm8ZZpf9_saZJVJQsVvvYohH10eNAmLrJ2",
+        "dt": "2025-10-10T16:33:02.889000+00:00"
+      },
+      "issatc": "-VAS-GAB0AAAAAAAAAAAAAAAAAAAAAAFEPUZHmAnMlYhVVYPk6oQNZ8DN3w2YR0y1kO35jrFwfat",
+      "pre": "EMzTKQcONgZEyr385OE8YRqYX3X0hDye9bC9v432T3bP",
+      "schema": {
+        "$id": "EKB7JitBHWnBFzNVeeYeZ9mn93_l_5sR-100MXYxZYJu",
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "Legal Entity vLEI Credential",
+        "description": "A vLEI Credential issued by a Qualified vLEI issuer to a Legal Entity",
+        "type": "object",
+        "credentialType": "LegalEntityvLEICredential",
+        "version": "1.0.0",
+        "properties": {
+          "v": {
+            "description": "Version",
+            "type": "string"
+          },
+          "d": {
+            "description": "Credential SAID",
+            "type": "string"
+          },
+          "u": {
+            "description": "One time use nonce",
+            "type": "string"
+          },
+          "i": {
+            "description": "QVI Issuer AID",
+            "type": "string"
+          },
+          "ri": {
+            "description": "Credential status registry",
+            "type": "string"
+          },
+          "s": {
+            "description": "Schema SAID",
+            "type": "string"
+          },
+          "a": {
+            "oneOf": [
+              {
+                "description": "Attributes block SAID",
+                "type": "string"
+              },
+              {
+                "$id": "EJkiCuzGSdhdxaBSv9wNK5V7Sk-pGNW-wU-TMNljqowJ",
+                "description": "Attributes block",
+                "type": "object",
+                "properties": {
+                  "d": {
+                    "description": "Attributes block SAID",
+                    "type": "string"
+                  },
+                  "i": {
+                    "description": "LE Issuer AID",
+                    "type": "string"
+                  },
+                  "dt": {
+                    "description": "issuance date time",
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "certificationType": {
+                    "description": "This is field is a domain value: {RiskLens, Esg, Insurance}",
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "i",
+                  "dt",
+                  "certificationType"
+                ]
+              }
+            ]
+          },
+          "e": {
+            "oneOf": [
+              {
+                "description": "Edges block SAID",
+                "type": "string"
+              },
+              {
+                "$id": "EDh9sp5cPk0-yo5sFMo6WJS1HMBYIOYCwJrnPvNaH1vI",
+                "description": "Edges block",
+                "type": "object",
+                "properties": {
+                  "d": {
+                    "description": "Edges block SAID",
+                    "type": "string"
+                  },
+                  "qvi": {
+                    "description": "QVI node",
+                    "type": "object",
+                    "properties": {
+                      "n": {
+                        "description": "Issuer credential SAID",
+                        "type": "string"
+                      },
+                      "s": {
+                        "description": "SAID of required schema of the credential pointed to by this node",
+                        "type": "string",
+                        "const": "EBfdlu8R27Fbx-ehrqwImnK-8Cm79sqbAQ4MmvEAYqao"
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "n",
+                      "s"
+                    ]
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "d",
+                  "qvi"
+                ]
+              }
+            ]
+          },
+          "r": {
+            "oneOf": [
+              {
+                "description": "Rules block SAID",
+                "type": "string"
+              },
+              {
+                "$id": "ECllqarpkZrSIWCb97XlMpEZZH3q4kc--FQ9mbkFMb_5",
+                "description": "Rules block",
+                "type": "object",
+                "properties": {
+                  "d": {
+                    "description": "Rules block SAID",
+                    "type": "string"
+                  },
+                  "usageDisclaimer": {
+                    "description": "Usage Disclaimer",
+                    "type": "object",
+                    "properties": {
+                      "l": {
+                        "description": "Associated legal language",
+                        "type": "string",
+                        "const": "Usage of a valid, unexpired, and non-revoked vLEI Credential, as defined in the associated Ecosystem Governance Framework, does not assert that the Legal Entity is trustworthy, honest, reputable in its business dealings, safe to do business with, or compliant with any laws or that an implied or expressly intended purpose will be fulfilled."
+                      }
+                    }
+                  },
+                  "issuanceDisclaimer": {
+                    "description": "Issuance Disclaimer",
+                    "type": "object",
+                    "properties": {
+                      "l": {
+                        "description": "Associated legal language",
+                        "type": "string",
+                        "const": "All information in a valid, unexpired, and non-revoked vLEI Credential, as defined in the associated Ecosystem Governance Framework, is accurate as of the date the validation process was complete. The vLEI Credential has been issued to the legal entity or person named in the vLEI Credential as the subject; and the qualified vLEI Issuer exercised reasonable care to perform the validation process set forth in the vLEI Ecosystem Governance Framework."
+                      }
+                    }
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "d",
+                  "usageDisclaimer",
+                  "issuanceDisclaimer"
+                ]
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "i",
+          "ri",
+          "s",
+          "d",
+          "e",
+          "r"
+        ]
+      },
+      "chains": [
+        {
+          "sad": {
+            "v": "ACDC10JSON000197_",
+            "d": "EDQ0Cel12683oYnHgZNNzIfcwZKMJ3F-C-8gSVrbitv4",
+            "i": "ECzkNreWTDr3nC1eA6Pf5oTDoqogwUq3rTQ8E_OQWVZD",
+            "ri": "EAueIYmiYU1hXB-HWsOpdMgJBuj_W3K9xIsRcFOhFiB6",
+            "s": "EBfdlu8R27Fbx-ehrqwImnK-8Cm79sqbAQ4MmvEAYqao",
+            "a": {
+              "d": "EB62pSRrM6MZCiFn5nMbo9lLJpxGJ7CMwUk2QaQ-LPCj",
+              "i": "EMzTKQcONgZEyr385OE8YRqYX3X0hDye9bC9v432T3bP",
+              "LEI": "254900OPPU84GM83MG36",
+              "dt": "2025-10-10T16:32:33.066000+00:00"
+            }
+          },
+          "atc": "-IABEDQ0Cel12683oYnHgZNNzIfcwZKMJ3F-C-8gSVrbitv40AAAAAAAAAAAAAAAAAAAAAAAEDQ0Cel12683oYnHgZNNzIfcwZKMJ3F-C-8gSVrbitv4",
+          "iss": {
+            "v": "KERI10JSON0000ed_",
+            "t": "iss",
+            "d": "EIv-GAljshCtXLDZh90Ytyxgk885LcdMa6rnXQVg5WSQ",
+            "i": "EDQ0Cel12683oYnHgZNNzIfcwZKMJ3F-C-8gSVrbitv4",
+            "s": "0",
+            "ri": "EAueIYmiYU1hXB-HWsOpdMgJBuj_W3K9xIsRcFOhFiB6",
+            "dt": "2025-10-10T16:32:33.066000+00:00"
+          },
+          "issatc": "-VAS-GAB0AAAAAAAAAAAAAAAAAAAAAACEEXOfqz3nAqDXJ7Aw9UUfiNCfEb_NX3Yomc7c_QTCIss",
+          "pre": "ECzkNreWTDr3nC1eA6Pf5oTDoqogwUq3rTQ8E_OQWVZD",
+          "schema": {
+            "$id": "EBfdlu8R27Fbx-ehrqwImnK-8Cm79sqbAQ4MmvEAYqao",
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "Qualified vLEI Issuer Credential",
+            "description": "A vLEI Credential issued by GLEIF to Qualified vLEI Issuers which allows the Qualified vLEI Issuers to issue, verify and revoke Legal Entity vLEI Credentials and Legal Entity Official Organizational Role vLEI Credentials",
+            "type": "object",
+            "credentialType": "QualifiedvLEIIssuervLEICredential",
+            "version": "1.0.0",
+            "properties": {
+              "v": {
+                "description": "Version",
+                "type": "string"
+              },
+              "d": {
+                "description": "Credential SAID",
+                "type": "string"
+              },
+              "u": {
+                "description": "One time use nonce",
+                "type": "string"
+              },
+              "i": {
+                "description": "GLEIF Issuee AID",
+                "type": "string"
+              },
+              "ri": {
+                "description": "Credential status registry",
+                "type": "string"
+              },
+              "s": {
+                "description": "Schema SAID",
+                "type": "string"
+              },
+              "a": {
+                "oneOf": [
+                  {
+                    "description": "Attributes block SAID",
+                    "type": "string"
+                  },
+                  {
+                    "$id": "ELGgI0fkloqKWREXgqUfgS0bJybP1LChxCO3sqPSFHCj",
+                    "description": "Attributes block",
+                    "type": "object",
+                    "properties": {
+                      "d": {
+                        "description": "Attributes block SAID",
+                        "type": "string"
+                      },
+                      "i": {
+                        "description": "QVI Issuee AID",
+                        "type": "string"
+                      },
+                      "dt": {
+                        "description": "Issuance date time",
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "LEI": {
+                        "description": "LEI of the requesting Legal Entity",
+                        "type": "string",
+                        "format": "ISO 17442"
+                      },
+                      "gracePeriod": {
+                        "description": "Allocated grace period",
+                        "type": "integer",
+                        "default": 90
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "i",
+                      "dt",
+                      "LEI"
+                    ]
+                  }
+                ]
+              },
+              "r": {
+                "oneOf": [
+                  {
+                    "description": "Rules block SAID",
+                    "type": "string"
+                  },
+                  {
+                    "$id": "ECllqarpkZrSIWCb97XlMpEZZH3q4kc--FQ9mbkFMb_5",
+                    "description": "Rules block",
+                    "type": "object",
+                    "properties": {
+                      "d": {
+                        "description": "Rules block SAID",
+                        "type": "string"
+                      },
+                      "usageDisclaimer": {
+                        "description": "Usage Disclaimer",
+                        "type": "object",
+                        "properties": {
+                          "l": {
+                            "description": "Associated legal language",
+                            "type": "string",
+                            "const": "Usage of a valid, unexpired, and non-revoked vLEI Credential, as defined in the associated Ecosystem Governance Framework, does not assert that the Legal Entity is trustworthy, honest, reputable in its business dealings, safe to do business with, or compliant with any laws or that an implied or expressly intended purpose will be fulfilled."
+                          }
+                        }
+                      },
+                      "issuanceDisclaimer": {
+                        "description": "Issuance Disclaimer",
+                        "type": "object",
+                        "properties": {
+                          "l": {
+                            "description": "Associated legal language",
+                            "type": "string",
+                            "const": "All information in a valid, unexpired, and non-revoked vLEI Credential, as defined in the associated Ecosystem Governance Framework, is accurate as of the date the validation process was complete. The vLEI Credential has been issued to the legal entity or person named in the vLEI Credential as the subject; and the qualified vLEI Issuer exercised reasonable care to perform the validation process set forth in the vLEI Ecosystem Governance Framework."
+                          }
+                        }
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "d",
+                      "usageDisclaimer",
+                      "issuanceDisclaimer"
+                    ]
+                  }
+                ]
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "i",
+              "ri",
+              "s",
+              "d"
+            ]
+          },
+          "chains": [],
+          "status": {
+            "vn": [
+              1,
+              0
+            ],
+            "i": "EDQ0Cel12683oYnHgZNNzIfcwZKMJ3F-C-8gSVrbitv4",
+            "s": "0",
+            "d": "EIv-GAljshCtXLDZh90Ytyxgk885LcdMa6rnXQVg5WSQ",
+            "ri": "EAueIYmiYU1hXB-HWsOpdMgJBuj_W3K9xIsRcFOhFiB6",
+            "ra": {},
+            "a": {
+              "s": 2,
+              "d": "EEXOfqz3nAqDXJ7Aw9UUfiNCfEb_NX3Yomc7c_QTCIss"
+            },
+            "dt": "2025-10-10T16:32:33.066000+00:00",
+            "et": "iss"
+          },
+          "anchor": {
+            "pre": "EDQ0Cel12683oYnHgZNNzIfcwZKMJ3F-C-8gSVrbitv4",
+            "sn": 0,
+            "d": "EIv-GAljshCtXLDZh90Ytyxgk885LcdMa6rnXQVg5WSQ"
+          },
+          "anc": {
+            "v": "KERI10JSON00013a_",
+            "t": "ixn",
+            "d": "EEXOfqz3nAqDXJ7Aw9UUfiNCfEb_NX3Yomc7c_QTCIss",
+            "i": "ECzkNreWTDr3nC1eA6Pf5oTDoqogwUq3rTQ8E_OQWVZD",
+            "s": "2",
+            "p": "EHobymd0AwAHBj56tg0MuUyrXOcWftPpwYe2Sm10YW5D",
+            "a": [
+              {
+                "i": "EDQ0Cel12683oYnHgZNNzIfcwZKMJ3F-C-8gSVrbitv4",
+                "s": "0",
+                "d": "EIv-GAljshCtXLDZh90Ytyxgk885LcdMa6rnXQVg5WSQ"
+              }
+            ]
+          },
+          "ancatc": [
+            "-VAn-AABAAADrBTpL3dMDfaQ-5PWVhRl32yp4-LDZsqcyfksFry3JTkmWOyAyxrDxDwkLxslng_1bkpSvBjyCoggoKAiKLgL-EAB0AAAAAAAAAAAAAAAAAAAAAAA1AAG2025-10-10T16c32c49d649032p00c00"
+          ]
+        }
+      ],
+      "status": {
+        "vn": [
+          1,
+          0
+        ],
+        "i": "EDjCWEvXt9xWnM_2dNTBXSoDcjA3y4YueQ-M1tdM0nFW",
+        "s": "0",
+        "d": "EEDv0nmzr2-1bpNeREzO4Yz15jNRULAYG3q1KivLUiwZ",
+        "ri": "EFIn8eXP8Rlm8ZZpf9_saZJVJQsVvvYohH10eNAmLrJ2",
+        "ra": {},
+        "a": {
+          "s": 5,
+          "d": "EPUZHmAnMlYhVVYPk6oQNZ8DN3w2YR0y1kO35jrFwfat"
+        },
+        "dt": "2025-10-10T16:33:02.889000+00:00",
+        "et": "iss"
+      },
+      "anchor": {
+        "pre": "EDjCWEvXt9xWnM_2dNTBXSoDcjA3y4YueQ-M1tdM0nFW",
+        "sn": 0,
+        "d": "EEDv0nmzr2-1bpNeREzO4Yz15jNRULAYG3q1KivLUiwZ"
+      },
+      "anc": {
+        "v": "KERI10JSON00013a_",
+        "t": "ixn",
+        "d": "EPUZHmAnMlYhVVYPk6oQNZ8DN3w2YR0y1kO35jrFwfat",
+        "i": "EMzTKQcONgZEyr385OE8YRqYX3X0hDye9bC9v432T3bP",
+        "s": "5",
+        "p": "EEzcnKjRgRYQdHj7boi_6duKPaVLPsSGYoUbheZMxhTC",
+        "a": [
+          {
+            "i": "EDjCWEvXt9xWnM_2dNTBXSoDcjA3y4YueQ-M1tdM0nFW",
+            "s": "0",
+            "d": "EEDv0nmzr2-1bpNeREzO4Yz15jNRULAYG3q1KivLUiwZ"
+          }
+        ]
+      },
+      "ancatc": [
+        "-VAn-AABAAC6ATeePAotAddz_ltfDARfeSgT_uii5CJYhbshC_NkQmxVu6fOziT6OPsKrOG73LYAWzimARHPFYJy9KG-uiIN-EAB0AAAAAAAAAAAAAAAAAAAAAAA1AAG2025-10-10T16c33c04d284540p00c00"
+      ]
+    }
+  ],
+  "status": {
+    "vn": [
+      1,
+      0
+    ],
+    "i": "EErQ0NarVGPNP_PiHrmglKDX7cyG9qHh0wWSePLeTfaJ",
+    "s": "1",
+    "d": "EKEviRgzQvbDYYE4hZzNsJilCv6qhwqLV6pDFiGjbWFk",
+    "ri": "ECKy2cLUZ6KYDnqMgay1S6V-W7mmxnv50iEeiZFDKY1p",
+    "ra": {},
+    "a": {
+      "s": 3,
+      "d": "EFz9GHH44W65EnmsSLKLImTZfGfmGVjWH4CcUA1tmyrE"
+    },
+    "dt": "2025-10-10T16:33:19.261000+00:00",
+    "et": "rev"
+  },
+  "anchor": {
+    "pre": "EErQ0NarVGPNP_PiHrmglKDX7cyG9qHh0wWSePLeTfaJ",
+    "sn": 0,
+    "d": "EKeaRsbfq4jsYLa7w2PEl8NszpPLVDjOTl3eOwsXMbkO"
+  },
+  "anc": {
+    "v": "KERI10JSON00013a_",
+    "t": "ixn",
+    "d": "EIvhr9-DewlZU6c33kpB1TGH6NgzHBqUb7ofdFgjiS2T",
+    "i": "EHk4R2o-7ZTihOOrtsIesiZlZLfcgxXpDf065BZrSqmd",
+    "s": "2",
+    "p": "EPyfw21_vLYWI2f7Gqb0AjGfVXcZ4TYA8zVTii0m681J",
+    "a": [
+      {
+        "i": "EErQ0NarVGPNP_PiHrmglKDX7cyG9qHh0wWSePLeTfaJ",
+        "s": "0",
+        "d": "EKeaRsbfq4jsYLa7w2PEl8NszpPLVDjOTl3eOwsXMbkO"
+      }
+    ]
+  },
+  "ancatc": [
+    "-VAn-AABAADE6VUO265mFaotonDh19Ccic293c3t8n0-8HNca7s-xX6FpN0FHscCcTMOXCXS4Mg4p_wZ3C6eyy6HHKD1EYQE-EAB0AAAAAAAAAAAAAAAAAAAAAAA1AAG2025-10-10T16c33c10d323416p00c00"
+  ]
+}

@@ -1,0 +1,112 @@
+### Test Confirmation Workflow
+### Step 1: Start a new conversation
+POST http://localhost:5184/api/chat/start
+Content-Type: application/json
+
+{
+  "userId": "test-user"
+}
+
+### Response: Save the conversationId
+# Example response:
+# {
+#   "conversationId": "12345-guid-here",
+#   "message": "Hello! How can I assist you today?",
+#   "success": true
+# }
+
+###
+### Step 2: Send a message that will trigger a tool call
+### Replace {{conversationId}} with actual value from Step 1
+POST http://localhost:5184/api/chat/message
+Content-Type: application/json
+
+{
+  "conversationId": "12345-guid-here",
+  "message": "List all applications from the VLEI registry"
+}
+
+### Response: Save the actionId from pendingActions array
+# Example response:
+# {
+#   "conversationId": "12345-guid-here",
+#   "message": "I need to call the registry-application-list function...",
+#   "pendingActions": [
+#     {
+#       "actionId": "action-guid-here",
+#       "functionName": "registry-application-list",
+#       "pluginName": "ApplicationRegistryAccessTool",
+#       "arguments": {},
+#       "description": "List all applications",
+#       "createdAt": "2024-01-15T10:30:00Z"
+#     }
+#   ],
+#   "success": true
+# }
+
+###
+### Step 3a: Confirm the action
+### Replace {{actionId}} with actual value from Step 2
+POST http://localhost:5184/api/chat/action/confirm
+Content-Type: application/json
+
+{
+  "actionId": "action-guid-here",
+  "reason": "User confirmed the action"
+}
+
+### Response:
+# {
+#   "success": true,
+#   "message": "Action confirmed"
+# }
+# Note: After confirmation, the tool will execute and results will be available
+
+###
+### Step 3b: OR Reject the action (alternative to Step 3a)
+### Replace {{actionId}} with actual value from Step 2
+POST http://localhost:5184/api/chat/action/reject
+Content-Type: application/json
+
+{
+  "actionId": "action-guid-here",
+  "reason": "User rejected the action"
+}
+
+### Response:
+# {
+#   "success": true,
+#   "message": "Action rejected"
+# }
+# Note: After rejection, the tool will NOT execute
+
+###
+### Step 4: Check conversation status (optional)
+### Replace {{conversationId}} with actual value from Step 1
+DELETE http://localhost:5184/api/chat/conversation/12345-guid-here
+
+###
+### Test Case: Multiple Pending Actions
+POST http://localhost:5184/api/chat/message
+Content-Type: application/json
+
+{
+  "conversationId": "12345-guid-here",
+  "message": "List all applications and then list all certifiers"
+}
+
+### Expected: Should return multiple pending actions, one for each tool call
+
+###
+### Test Case: Expired Action (wait >5 minutes before confirming)
+# 1. Send message that triggers tool
+# 2. Wait 5+ minutes
+# 3. Try to confirm
+# Expected: "Action not found or already processed"
+
+###
+### Test Case: Duplicate Confirmation
+# 1. Send message that triggers tool
+# 2. Confirm once
+# 3. Try to confirm again with same actionId
+# Expected: "Action not found or already processed"

@@ -1,0 +1,340 @@
+# VLEI Application Services Docker Compose
+# This compose file runs the VLEI application layer services and connects to the existing VLEI infrastructure
+
+# Health check configuration template
+x-healthcheck: &healthcheck
+  interval: 30s
+  timeout: 10s
+  retries: 5
+  start_period: 60s
+
+networks:
+  # Connect to the existing KERI network from infrastructure-setup
+  keri_network:
+    external: true
+    name: keri_network
+  # Internal network for application services
+  vlei_app_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+
+volumes:
+  # Persistent volumes for application data
+  vlei-chatbot-data:
+  vlei-registry-data:
+  vlei-bff-data:
+  vlei-bff-emails:
+  vlei-holder-responder-data:
+  # Persistent volumes for logs
+  vlei-registry-logs:
+  vlei-bff-logs:
+  vlei-chatbot-logs:
+  vlei-holder-responder-logs:
+  vlei-web-logs:
+
+services:
+  # =============================================================================
+  # VLEI Registry - Trust Registry and Application Discovery Service
+  # =============================================================================
+  vlei-registry:
+    build:
+      context: .
+      dockerfile: ./dockerImages/vlei-registry/Dockerfile
+    container_name: vlei-registry
+    restart: unless-stopped
+    networks:
+      - keri_network
+      - vlei_app_network
+    ports:
+      - "5136:5136"
+    volumes:
+      - vlei-registry-data:/app/data
+      - vlei-registry-logs:/app/logs
+    environment:
+      # ASP.NET Core Configuration
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:5136
+      - ASPNETCORE_HTTP_PORTS=5136
+      
+      # Logging Configuration
+      - Logging__LogLevel__Default=${VLEI_LOG_LEVEL:-Information}
+      - Logging__LogLevel__Microsoft.AspNetCore=${VLEI_ASPNET_LOG_LEVEL:-Warning}
+      
+      # CORS Configuration
+      - Cors__AllowedOrigins=${VLEI_CORS_ORIGINS:-http://localhost:3000,http://localhost:5173,http://vlei-supplier-portal-web:3000}
+      - Cors__AllowAnyPort=${VLEI_CORS_ALLOW_ANY_PORT:-true}
+      
+      # Application Data Configuration (Mock Registry Data)
+      - ApplicationData__0__ApplicationId=supplier-portal
+      - ApplicationData__0__Description=VLEI Supplier Discovery Portal
+      - ApplicationData__0__CredentialSchema=${VLEI_SUPPLIER_CREDENTIAL_SCHEMA:-ENPXp1vQzRF6JwIuS-mp2U8Uf1MoADoP_GqQ62VsDZWY}
+      - ApplicationData__0__McpName=SupplierPortalMcp
+      - ApplicationData__0__ApiUrl=http://vlei-supplier-portal-bff:5178/
+      - ApplicationData__0__PortalUrl=http://vlei-supplier-portal-web:3000/
+      
+      # Certifier Data Configuration
+      - CertifierData__0__Id=CRIF
+      - CertifierData__0__Name=CRIF Risk Assessment Provider
+      - CertifierData__0__BadgeTypes__0=${VLEI_RISKLENS_SCHEMA:-ENiOJlEz0_UMIN-olC06myHv8163njRNjFCnePFNKHZH}
+      - CertifierData__0__ContactUri=https://contact.crif.com/vlei-certifier
+      - CertifierData__1__Id=GreenPuls
+      - CertifierData__1__Name=GreenPuls ESG Compliance Certifier
+      - CertifierData__1__BadgeTypes__0=${VLEI_ESG_SCHEMA:-EAag5G3RpOTcIgmCJSkz6h_v4BkFhGDQFFYK2gMBVM7P}
+      - CertifierData__1__ContactUri=https://contact.greenpuls.com/vlei-certifier
+    healthcheck:
+      interval: 30s 
+      timeout: 10s 
+      retries: 3
+      test: ["CMD", "curl", "-f", "http://localhost:5136/health"]
+      <<: *healthcheck
+    depends_on:
+      - vlei-infrastructure-check
+
+  # =============================================================================
+  # VLEI Supplier Portal BFF - Backend for Frontend Service
+  # =============================================================================
+  vlei-supplier-portal-bff:
+    build:
+      context: .
+      dockerfile: ./dockerImages/vlei-supplier-portal-bff/Dockerfile
+    container_name: vlei-supplier-portal-bff
+    restart: unless-stopped
+    networks:
+      - keri_network
+      - vlei_app_network
+    ports:
+      - "5178:5178"
+    volumes:
+      - vlei-bff-data:/app/data
+      - vlei-bff-logs:/app/logs
+      - vlei-bff-emails:/app/EmailOutput
+    environment:
+      # ASP.NET Core Configuration
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:5178
+      - ASPNETCORE_HTTP_PORTS=5178
+      
+      # Logging Configuration
+      - Logging__LogLevel__Default=${VLEI_LOG_LEVEL:-Information}
+      - Logging__LogLevel__Microsoft.AspNetCore=${VLEI_ASPNET_LOG_LEVEL:-Warning}
+      
+      # VLEI Configuration
+      - Application__Aid=${VLEI_APPLICATION_AID:-EKYLUMmNPuoqfVjLVbpkRAEldY3z7F8xzLJhRU7V89eI}
+      - Application__Oobi=${VLEI_APPLICATION_OOBI:-http://keria:3902/oobi/EKYLUMmNPuoqfVjLVbpkRAEldY3z7F8xzLJhRU7V89eI}
+      - Application__CredentialSchemaAid=${VLEI_CREDENTIAL_SCHEMA_AID:-ENPXp1vQzRF6JwIuS-mp2U8Uf1MoADoP_GqQ62VsDZWY}
+      - Application__RequiredRiskSchemaCredentialAid=${VLEI_RISK_SCHEMA_AID:-ENiOJlEz0_UMIN-olC06myHv8163njRNjFCnePFNKHZH}
+      
+      # KERIA Integration
+      - Keria__AdminUrl=${KERIA_ADMIN_URL:-http://keria:3901}
+      - Keria__BootUrl=${KERIA_BOOT_URL:-http://keria:3903}
+      - Keria__AgentUrl=${KERIA_AGENT_URL:-http://keria:3902}
+      
+      # VLEI Schema Server
+      - VleiSchemaServer__BaseUrl=${VLEI_SCHEMA_SERVER:-http://vlei-server:7723}
+      
+      # GLEIF API Integration
+      - GleifApi__BaseUrl=${GLEIF_API_URL:-https://api.gleif.org/api/v1}
+      - GleifApi__Timeout=${GLEIF_API_TIMEOUT:-30000}
+      
+      # CORS Configuration
+      - Cors__AllowedOrigins=${VLEI_CORS_ORIGINS:-http://localhost:3000,http://localhost:5173,http://vlei-supplier-portal-web:3000}
+      - Cors__AllowAnyPort=${VLEI_CORS_ALLOW_ANY_PORT:-true}
+      
+      # Email Service Configuration
+      - EmailService__OutputDirectory=/app/EmailOutput
+      - EmailService__EnableEmailGeneration=${VLEI_ENABLE_EMAIL_GENERATION:-true}
+      
+      # Database Configuration (Mock/In-Memory)
+      - Database__UseInMemoryDatabase=${VLEI_USE_IN_MEMORY_DB:-true}
+      - Database__ConnectionString=${VLEI_DB_CONNECTION_STRING:-}
+      
+      # Service Dependencies
+      - VleiRegistry__BaseUrl=http://vlei-registry:5136
+      - ChatbotApi__BaseUrl=http://vlei-chatbot-api:5184
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5178/health"]
+      <<: *healthcheck
+    depends_on:
+      vlei-registry:
+        condition: service_healthy
+      vlei-infrastructure-check:
+        condition: service_completed_successfully
+
+  # =============================================================================
+  # VLEI Chatbot API - AI-Powered Assistant Service
+  # =============================================================================
+  vlei-chatbot-api:
+    build:
+      context: .
+      dockerfile: ./dockerImages/vlei-chatbot-api/Dockerfile
+    container_name: vlei-chatbot-api
+    restart: unless-stopped
+    networks:
+      - keri_network
+      - vlei_app_network
+    ports:
+      - "5184:5184"
+    volumes:
+      - vlei-chatbot-data:/app/data
+      - vlei-chatbot-logs:/app/logs
+      - ./vlei-ecosystem-agent/vlei-chatbot-api/ConfigurationPrompt:/app/ConfigurationPrompt:ro
+    environment:
+      # ASP.NET Core Configuration
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:5184
+      - ASPNETCORE_HTTP_PORTS=5184
+      
+      # Logging Configuration
+      - Logging__LogLevel__Default=${VLEI_LOG_LEVEL:-Information}
+      - Logging__LogLevel__Microsoft.AspNetCore=${VLEI_ASPNET_LOG_LEVEL:-Warning}
+      
+      # Azure OpenAI Configuration
+      - AzureOpenAI__Endpoint=${AZURE_OPENAI_ENDPOINT}
+      - AzureOpenAI__DeploymentName=${AZURE_OPENAI_DEPLOYMENT_NAME:-gpt-4}
+      - AzureOpenAI__ApiKey=${AZURE_OPENAI_API_KEY}
+      - AzureOpenAI__PromptConfiguration=/app/ConfigurationPrompt/
+      
+      # VLEI Service Integration
+      - VleiRegistry__BaseUrl=http://vlei-registry:5136
+      - SupplierPortal__BaseUrl=http://vlei-supplier-portal-bff:5178
+      
+      # CORS Configuration
+      - Cors__AllowedOrigins=${VLEI_CORS_ORIGINS:-http://localhost:3000,http://localhost:5173,http://vlei-supplier-portal-web:3000}
+      - Cors__AllowAnyPort=${VLEI_CORS_ALLOW_ANY_PORT:-true}
+      
+      # Semantic Kernel Configuration
+      - SemanticKernel__MaxTokens=${VLEI_MAX_TOKENS:-4000}
+      - SemanticKernel__Temperature=${VLEI_TEMPERATURE:-0.7}
+      - SemanticKernel__TopP=${VLEI_TOP_P:-0.9}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5184/health"]
+      <<: *healthcheck
+    depends_on:
+      vlei-supplier-portal-bff:
+        condition: service_healthy
+      vlei-registry:
+        condition: service_healthy
+
+  # =============================================================================
+  # VLEI Holder Credential Responder - Automated Credential Presentation Daemon
+  # =============================================================================
+  vlei-holder-credential-responder:
+    build:
+      context: .
+      dockerfile: ./dockerImages/vlei-holder-credential-responder/Dockerfile
+    container_name: vlei-holder-credential-responder
+    restart: unless-stopped
+    networks:
+      - keri_network
+      - vlei_app_network
+    ports:
+      - "3001:3001"
+    volumes:
+      - vlei-holder-responder-data:/app/data
+      - vlei-holder-responder-logs:/app/logs
+    environment:
+      # Node.js Configuration
+      - NODE_ENV=production
+      - NODE_OPTIONS="--max-old-space-size=2048"
+      
+      # KERIA Configuration
+      - DEFAULT_ADMIN_URL=${KERIA_ADMIN_URL:-http://keria:3901}
+      - DEFAULT_BOOT_URL=${KERIA_BOOT_URL:-http://keria:3903}
+      - SCHEMA_SERVER_HOST=${VLEI_SCHEMA_SERVER:-http://vlei-server:7723}
+      
+      # Holder Configuration
+      - HOLDER_CONFIGS=${VLEI_HOLDER_CONFIGS:-holder1:bran1,holder2:bran2}
+      - DAEMON_CHECK_INTERVAL_MS=${VLEI_DAEMON_INTERVAL:-5000}
+      - MAX_NOTIFICATIONS_PER_BATCH=${VLEI_MAX_NOTIFICATIONS:-10}
+      
+      # Logging Configuration
+      - LOG_LEVEL=${VLEI_LOG_LEVEL:-info}
+      - LOG_FILE=/app/logs/holder-responder.log
+      
+      # Retry Configuration
+      - DEFAULT_TIMEOUT_MS=${VLEI_DEFAULT_TIMEOUT:-30000}
+      - DEFAULT_DELAY_MS=${VLEI_DEFAULT_DELAY:-5000}
+      - DEFAULT_RETRIES=${VLEI_DEFAULT_RETRIES:-10}
+    healthcheck:
+      test: ["CMD", "pgrep", "-f", "node.*main.js"]
+      <<: *healthcheck
+    depends_on:
+      vlei-infrastructure-check:
+        condition: service_completed_successfully
+
+  # =============================================================================
+  # VLEI Supplier Portal Web - React Frontend Application
+  # =============================================================================
+  vlei-supplier-portal-web:
+    build:
+      context: .
+      dockerfile: ./dockerImages/vlei-supplier-portal-web/Dockerfile
+      args:
+        - VITE_SUPPLIER_API_URL=http://vlei-supplier-portal-bff:5178
+        - VITE_CHATBOT_API_URL=http://vlei-chatbot-api:5184
+        - VITE_REGISTRY_API_URL=http://vlei-registry:5136
+    container_name: vlei-supplier-portal-web
+    restart: unless-stopped
+    networks:
+      - vlei_app_network
+    ports:
+      - "3000:3000"
+    volumes:
+      - vlei-web-logs:/var/log/nginx
+    environment:
+      # Nginx Configuration
+      - NGINX_HOST=vlei-supplier-portal-web
+      - NGINX_PORT=3000
+      
+      # Application Environment
+      - APP_ENV=production
+      - APP_VERSION=${VLEI_APP_VERSION:-1.0.0}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health.html"]
+      <<: *healthcheck
+    depends_on:
+      vlei-chatbot-api:
+        condition: service_healthy
+      vlei-supplier-portal-bff:
+        condition: service_healthy
+
+  # =============================================================================
+  # Infrastructure Health Check Service
+  # =============================================================================
+  vlei-infrastructure-check:
+    image: curlimages/curl:8.5.0
+    container_name: vlei-infrastructure-check
+    networks:
+      - keri_network
+    command: |
+      sh -c '
+        echo "Checking VLEI infrastructure services..."
+        
+        # Check VLEI Schema Server
+        echo "Checking VLEI Schema Server..."
+        until curl -f http://vlei-server:7723/oobi/EBfdlu8R27Fbx-ehrqwImnK-8Cm79sqbAQ4MmvEAYqao; do
+          echo "Waiting for VLEI Schema Server..."
+          sleep 5
+        done
+        
+        # Check KERIA Services
+        echo "Checking KERIA services..."
+        until curl -f http://keria:3902/spec.yaml; do
+          echo "Waiting for KERIA..."
+          sleep 5
+        done
+        
+        # Check Witness Network
+        echo "Checking witness network..."
+        until curl -f http://witness-demo:5642/oobi; do
+          echo "Waiting for witness network..."
+          sleep 5
+        done
+        
+        echo "All infrastructure services are ready!"
+      '
+    restart: "no"
+
+# All volumes are defined above in the volumes section

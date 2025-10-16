@@ -1,0 +1,25 @@
+{
+  "title": "TrustSphere",
+  "logo": "http://localhost:3000/assets/trustsphere_transparent_vlei.png",
+  "icon": "http://locahost:3000/assets/sphere.png",
+  "onboardingUrl": "https://www.gleif.org/en/organizational-identity/get-an-lei-find-lei-issuing-organizations",
+  "docsUrl": "https://www.gleif.org/en/organizational-identity/introducing-the-legal-entity-identifier-lei",
+  "supportUrl": "https://www.gleif.org/en/contact/contact-information",
+  "theme": {
+    "colors": {
+      "primary": "#1DAC93",
+      "secondary": "#F1F3F4",
+      "error": "#D32F2F",
+      "heading": "#002A6B",
+      "text": "#333333",
+      "subtext": "#666666",
+      "white": "#FFFFFF",
+      "black": "#000000",
+      "bodyBg": "#FFFFF",
+      "bodyBorder": "#065E62",
+      "bodyColor": "#333333",
+      "cardColor": "#1DAC93",
+      "cardBg": "#BBE2DC"
+    }
+  }
+}

@@ -1,0 +1,82 @@
+@host = http://localhost:5135
+@contentType = application/json
+
+### Generate a standard email from LLM message
+POST {{host}}/api/email/generate
+Content-Type: {{contentType}}
+
+{
+  "llmMessageBody": "Dear valued partner,\n\nWe are pleased to inform you that your vLEI credential application has been successfully processed. Your organization is now part of the TrustSphere verified network.\n\n**What this means for you:**\n\n- Full access to the TrustSphere supplier portal\n- Verified digital identity for your organization\n- Enhanced trust and transparency in business transactions\n- Streamlined credential verification process\n\nYou can now:\n\n1. Access your credential dashboard\n2. Manage your organizational credentials\n3. Share verified credentials with partners\n4. View your verification history\n\n**Next Steps:**\n\nWe recommend you review your credential details and ensure all information is accurate. If you notice any discrepancies, please contact our support team immediately.\n\nThank you for choosing TrustSphere. We look forward to supporting your digital identity journey.\n\nBest regards,\nThe TrustSphere Team",
+  "emailTitle": "Your vLEI Credential Application Has Been Approved",
+  "subject": "Welcome to TrustSphere - vLEI Credential Approved",
+  "ctaText": "Access Your Dashboard",
+  "ctaUrl": "https://trustsphere.example.com/dashboard",
+  "fileName": "vlei_approval_email"
+}
+
+### Generate a notification email
+POST {{host}}/api/email/generate-notification
+Content-Type: {{contentType}}
+
+{
+  "title": "New Credential Request Pending",
+  "message": "You have received a new credential request from ACME Corporation. Please review and approve or reject this request within 7 business days.",
+  "icon": "🔔",
+  "ctaText": "Review Request",
+  "ctaUrl": "https://trustsphere.example.com/requests/12345",
+  "fileName": "credential_request_notification"
+}
+
+### Generate email with complex LLM response
+POST {{host}}/api/email/generate
+Content-Type: {{contentType}}
+
+{
+  "llmMessageBody": "# Query Results Summary\n\nBased on your search criteria, I found **3 companies** that match your requirements:\n\n## Matching Companies:\n\n1. **Acme Corporation**\n   - LEI: 549300ABCDEF12345678\n   - Risk Level: Low\n   - Status: Active\n   - Annual Revenue: €5.2M\n\n2. **TechStart Solutions**\n   - LEI: 549300XYZTEC98765432\n   - Risk Level: Medium\n   - Status: Active\n   - Annual Revenue: €2.8M\n\n3. **Global Traders Inc**\n   - LEI: 549300GLOBAL123456\n   - Risk Level: Low\n   - Status: Active\n   - Annual Revenue: €12.5M\n\n## Analysis:\n\nAll three companies maintain **active vLEI credentials** and have passed our verification process. They are suitable for partnership considerations based on your risk tolerance criteria.\n\n**Recommendation:** We suggest prioritizing companies with Low risk ratings for initial engagement.\n\nWould you like more detailed information about any of these organizations?",
+  "emailTitle": "Company Search Results - 3 Matches Found",
+  "subject": "Your TrustSphere Query Results",
+  "ctaText": "View Full Details",
+  "ctaUrl": "https://trustsphere.example.com/search/results/789"
+}
+
+### Generate welcome email
+POST {{host}}/api/email/generate
+Content-Type: {{contentType}}
+
+{
+  "llmMessageBody": "Welcome to **TrustSphere**!\n\nWe're excited to have you join our verified business network. TrustSphere leverages vLEI (Verifiable Legal Entity Identifier) technology to create a trusted ecosystem for digital business interactions.\n\nHere's what you can do with your new account:\n\n- **Verify Your Organization**: Complete your organizational profile and obtain your vLEI credential\n- **Search Verified Companies**: Access our database of verified business entities\n- **Manage Credentials**: Issue, receive, and manage digital credentials\n- **Build Trust**: Establish verified relationships with partners and suppliers\n\nTo get started, please verify your email address and complete your organization's profile. Our AI assistant is available 24/7 to help answer questions about the vLEI ecosystem.\n\n*This is just the beginning of your journey toward trusted digital identity.*",
+  "emailTitle": "Welcome to TrustSphere",
+  "subject": "Welcome to TrustSphere - Get Started with vLEI",
+  "ctaText": "Complete Your Profile",
+  "ctaUrl": "https://trustsphere.example.com/onboarding"
+}
+
+### List all generated emails
+GET {{host}}/api/email/list
+
+### View a specific generated email (replace filename)
+GET {{host}}/api/email/view/vlei_approval_email.html
+
+### Generate alert notification
+POST {{host}}/api/email/generate-notification
+Content-Type: {{contentType}}
+
+{
+  "title": "Security Alert: Unusual Activity Detected",
+  "message": "We detected an unusual login attempt from an unrecognized device. If this was you, no action is needed. Otherwise, please secure your account immediately.",
+  "icon": "⚠️",
+  "ctaText": "Review Activity",
+  "ctaUrl": "https://trustsphere.example.com/security/activity"
+}
+
+### Generate success notification
+POST {{host}}/api/email/generate-notification
+Content-Type: {{contentType}}
+
+{
+  "title": "Credential Successfully Issued",
+  "message": "Your organization's vLEI credential has been successfully issued and is now active. You can view and share your credential from your dashboard.",
+  "icon": "✅",
+  "ctaText": "View Credential",
+  "ctaUrl": "https://trustsphere.example.com/credentials"
+}

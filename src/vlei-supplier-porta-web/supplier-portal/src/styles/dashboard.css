@@ -1,0 +1,911 @@
+/* VLEI Ecosystem Agentic Framework Dashboard Styles */
+
+.dashboard-container {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+  background: linear-gradient(135deg, #5DCEBC 0%, #48B5A5 100%);
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ecosystem-icon {
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.dashboard-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.dashboard-subtitle {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  font-weight: 400;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.company-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+}
+
+.lei-badge {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.menu-container {
+  position: relative;
+}
+
+.menu-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.menu-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  overflow: hidden;
+  animation: slideDown 0.2s ease-out;
+}
+
+.menu-item {
+  display: block;
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  color: #2c3e50;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  border-bottom: 1px solid #eee;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item:hover {
+  background-color: #f8f9fa;
+  color: #5DCEBC;
+}
+
+.menu-item.active {
+  background-color: #fff3e0;
+  color: #5DCEBC;
+}
+
+.menu-item.logout {
+  color: #dc3545;
+}
+
+.menu-item.logout:hover {
+  background-color: #fff5f5;
+}
+
+
+.dashboard-header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  transition: opacity 0.2s;
+}
+
+.dashboard-logo:hover {
+  opacity: 0.9;
+}
+
+.dashboard-header-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.dashboard-user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.dashboard-user-name {
+  font-weight: 500;
+  color: #fff;
+}
+
+.dashboard-logout-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.dashboard-logout-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Menu Dropdown */
+.dashboard-menu-container {
+  position: relative;
+}
+
+.dashboard-menu-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  transition: all 0.2s;
+}
+
+.dashboard-menu-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.dashboard-menu-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  overflow: hidden;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dashboard-menu-item {
+  display: block;
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  color: #2c3e50;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  border-bottom: 1px solid #eee;
+}
+
+.dashboard-menu-item:last-child {
+  border-bottom: none;
+}
+
+.dashboard-menu-item:hover {
+  background-color: #f8f9fa;
+  color: #5DCEBC;
+}
+
+.dashboard-menu-item.active {
+  background-color: #fff3e0;
+  color: #5DCEBC;
+}
+
+/* Tab Navigation */
+.tab-navigation {
+  background: white;
+  border-bottom: 2px solid #e0e0e0;
+  padding: 0;
+}
+
+.tab-navigation-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  padding: 1rem 2rem 1rem 1.5rem; /* Extra right padding for notification badge */
+  font-size: 1rem;
+  font-weight: 500;
+  color: #6c757d;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.tab-button:hover {
+  color: #2c3e50;
+  background-color: #f8f9fa;
+}
+
+.tab-button.active {
+  color: #5DCEBC;
+  border-bottom-color: #5DCEBC;
+  background-color: transparent;
+}
+
+/* Dashboard Content */
+.dashboard-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Home Tab Styles */
+.home-welcome-banner {
+  background: linear-gradient(135deg, #5DCEBC 0%, #48B5A5 100%);
+  color: white;
+  padding: 2.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.home-welcome-banner h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.home-welcome-banner p {
+  margin: 0;
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+/* Company Info Grid */
+.company-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.info-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.info-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.info-card-label {
+  font-size: 0.85rem;
+  color: #6c757d;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.info-card-value {
+  font-size: 1.25rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Quick Actions */
+.quick-actions {
+  margin-bottom: 2rem;
+}
+
+.quick-actions h2 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.action-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+.action-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  border-color: #5DCEBC;
+}
+
+.action-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.action-card h3 {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.action-card p {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .ecosystem-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .dashboard-title {
+    font-size: 1.1rem;
+  }
+
+  .dashboard-subtitle {
+    font-size: 0.75rem;
+  }
+
+  .header-right {
+    gap: 1rem;
+  }
+
+  .user-info {
+    display: none; /* Hide on mobile */
+  }
+
+  .dashboard-header-content {
+    padding: 1rem;
+  }
+
+  .dashboard-header-right {
+    gap: 1rem;
+  }
+
+  .dashboard-user-info {
+    display: none; /* Hide on mobile, show in menu dropdown */
+  }
+
+  .tab-navigation-content {
+    padding: 0 1rem;
+  }
+
+  .tab-button {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .dashboard-content {
+    padding: 1rem;
+  }
+
+  .home-welcome-banner {
+    padding: 1.5rem;
+  }
+
+  .home-welcome-banner h1 {
+    font-size: 1.5rem;
+  }
+
+  .home-welcome-banner p {
+    font-size: 1rem;
+  }
+
+  .company-info-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .actions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Integration with existing amazon.css */
+.dashboard-container .btn-primary {
+  background: linear-gradient(135deg, #5DCEBC 0%, #48B5A5 100%);
+  border: none;
+  color: white;
+  font-weight: 600;
+}
+
+.dashboard-container .btn-primary:hover {
+  background: linear-gradient(135deg, #48B5A5 0%, #d4690f 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Company Info Card Enhancements */
+.company-info-card .info-section {
+  margin-bottom: 1.5rem;
+}
+
+.company-info-card .info-section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #5DCEBC;
+}
+
+/* Collapsible section headers */
+.company-info-card .collapsible-header {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.company-info-card .collapsible-header:hover {
+  color: #48B5A5; /* Darker orange on hover */
+}
+
+.company-info-card .section-icon {
+  color: #5DCEBC;
+  flex-shrink: 0;
+}
+
+.company-info-card .section-title {
+  flex: 1;
+  color: #5DCEBC;
+}
+
+.company-info-card .toggle-arrow {
+  color: #5DCEBC;
+  font-size: 0.85rem;
+  transition: transform 0.2s ease;
+}
+
+.company-info-card .info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  background: #f9fafb;
+  transition: all 0.2s ease;
+}
+
+.company-info-card .info-item:hover {
+  background: #f3f4f6;
+  transform: translateX(4px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.company-info-card .info-icon {
+  flex-shrink: 0;
+  color: #5DCEBC;
+  margin-top: 2px;
+}
+
+.company-info-card .info-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.company-info-card .info-content label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.company-info-card .info-content span {
+  font-size: 0.95rem;
+  color: #1f2937;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.company-info-card .lei-code,
+.company-info-card .oobi-code,
+.company-info-card .prefix-code {
+  font-family: 'Courier New', monospace;
+  background: #ffffff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+  font-size: 0.85rem;
+}
+
+.company-info-card .address-item {
+  align-items: flex-start;
+}
+
+.company-info-card .address-block {
+  flex: 1;
+  line-height: 1.6;
+  color: #1f2937;
+  font-size: 0.95rem;
+}
+
+.company-info-card .address-block div {
+  margin-bottom: 2px;
+}
+
+/* GLEIF Ecosystem Image Styles */
+.gleif-ecosystem-banner {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20%;
+  max-width: 300px;
+  padding: 1rem;
+  background: transparent;
+  z-index: 50;
+}
+
+.gleif-ecosystem-banner .ecosystem-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Company Card Layout with Image */
+.company-card-layout {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.ecosystem-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.company-ecosystem-image {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.company-info-content {
+  flex: 1;
+}
+
+/* Add margin to container when ecosystem banner is fixed */
+.container {
+  margin-left: 22%;
+  transition: margin-left 0.3s ease;
+}
+
+/* Responsive Design for Ecosystem Images */
+@media (max-width: 1200px) {
+  .gleif-ecosystem-banner {
+    width: 15%;
+    max-width: 200px;
+  }
+
+  .container {
+    margin-left: 17%;
+  }
+}
+
+@media (max-width: 992px) {
+  .gleif-ecosystem-banner {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .gleif-ecosystem-banner .ecosystem-image {
+    max-width: 300px;
+  }
+
+  .container {
+    margin-left: 0;
+  }
+
+  .company-card-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .ecosystem-image-container {
+    order: -1;
+  }
+
+  .company-ecosystem-image {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gleif-ecosystem-banner {
+    padding: 0.5rem;
+  }
+
+  .company-ecosystem-image {
+    max-width: 200px;
+  }
+}
+
+/* Supplier Portal Header */
+.supplier-portal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  background: white;
+  border-bottom: 1px solid #e1e8ed;
+  margin-bottom: 0;
+}
+
+.supplier-portal-title h2 {
+  margin: 0 0 4px 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #232f3e;
+}
+
+.supplier-portal-title p {
+  margin: 0;
+  color: #656d76;
+  font-size: 14px;
+}
+
+.notifications-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 2px solid #5DCEBC;
+  background: white;
+  border-radius: 8px;
+  color: #5DCEBC;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.notifications-btn:hover {
+  background: #5DCEBC;
+  color: white;
+}
+
+.notifications-btn svg {
+  flex-shrink: 0;
+}
+
+/* Header Notification Bell */
+.header-notification-btn {
+  position: relative;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 6px;
+  margin: 0 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  opacity: 0.9;
+}
+
+.header-notification-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.header-notification-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.header-notification-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ff4444;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+  border: 2px solid #2e7d32;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+/* Notification badge on tab */
+.tab-notification-badge {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  color: white;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 20px;
+  text-align: center;
+  line-height: 1.2;
+  z-index: 1000;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Badge with notifications */
+.tab-notification-badge.has-notifications {
+  background: #ff6b6b;
+  animation: badgePulse 2s infinite;
+}
+
+.tab-notification-badge.has-notifications:hover {
+  background: #ff5252;
+  transform: scale(1.1);
+  animation: none;
+}
+
+/* Badge without notifications */
+.tab-notification-badge.no-notifications {
+  background: #6c757d;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  padding: 3px;
+}
+
+.tab-notification-badge.no-notifications:hover {
+  background: #5a6268;
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.tab-notification-badge.no-notifications svg {
+  width: 10px;
+  height: 10px;
+}
+
+@keyframes badgePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}

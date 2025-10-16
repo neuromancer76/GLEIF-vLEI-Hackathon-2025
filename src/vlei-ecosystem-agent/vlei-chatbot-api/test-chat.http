@@ -1,0 +1,29 @@
+### Test Chat API
+
+# Start a new conversation
+POST http://localhost:5184/api/chat/start
+Content-Type: application/json
+
+###
+
+# Send a message
+POST http://localhost:5184/api/chat/message
+Content-Type: application/json
+
+{
+    "message": "Hello, I'm looking for suppliers for electrical components",
+    "conversationId": ""
+}
+
+###
+
+# Send another message with conversation ID
+POST http://localhost:5184/api/chat/message  
+Content-Type: application/json
+
+{
+    "message": "I need companies with more than 100 employees and good credit rating",
+    "conversationId": "your-conversation-id-here"
+}
+
+###

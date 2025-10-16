@@ -1,0 +1,20 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- CRIF Logo -->
+  <g>
+    <!-- C -->
+    <path d="M10 10C10 6.68629 12.6863 4 16 4H18V8H16C14.8954 8 14 8.89543 14 10V30C14 31.1046 14.8954 32 16 32H18V36H16C12.6863 36 10 33.3137 10 30V10Z" fill="#0052A5"/>
+    
+    <!-- R -->
+    <path d="M24 4H32C35.3137 4 38 6.68629 38 10V14C38 16.2091 36.8807 18.1464 35.1716 19.2929L38 24V36H34V25L30 19V36H26V4H24ZM30 8V15H32C33.1046 15 34 14.1046 34 13V10C34 8.89543 33.1046 8 32 8H30Z" fill="#0052A5"/>
+    
+    <!-- I -->
+    <rect x="44" y="4" width="4" height="32" fill="#0052A5"/>
+    
+    <!-- F -->
+    <path d="M54 4H68V8H58V18H66V22H58V36H54V4Z" fill="#0052A5"/>
+    
+    <!-- Registered Trademark Symbol -->
+    <circle cx="74" cy="8" r="4" stroke="#0052A5" stroke-width="0.8" fill="none"/>
+    <text x="74" y="10" font-family="Arial, sans-serif" font-size="5" font-weight="bold" fill="#0052A5" text-anchor="middle">®</text>
+  </g>
+</svg>

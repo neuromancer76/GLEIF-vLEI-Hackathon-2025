@@ -1,0 +1,17 @@
+{
+    "schemaLogos": {
+        "ENiOJlEz0_UMIN-olC06myHv8163njRNjFCnePFNKHZH": {
+            "logo": "gabbiano.png",
+            "name": "CRIF"
+        },
+        "EAag5G3RpOTcIgmCJSkz6h_v4BkFhGDQFFYK2gMBVM7P": {
+            "logo": "gabbiano.png",
+            "name": "CRIF"
+        },
+        "ENPXp1vQzRF6JwIuS-mp2U8Uf1MoADoP_GqQ62VsDZWY": {
+            "logo": "gleif.svg",
+            "name": "GLEIF"
+        },
+        "defaultLogo": "gleif.svg"
+    }
+}
